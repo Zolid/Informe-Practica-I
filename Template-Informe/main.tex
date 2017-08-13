@@ -1,0 +1,113 @@
+% Template:     Informe/Reporte LaTeX
+% Documento:    Archivo principal
+% Versión:      4.3.6 (30/07/2017)
+% Codificación: UTF-8
+%
+% Autor: Pablo Pizarro R.
+%        Facultad de Ciencias Físicas y Matemáticas
+%        Universidad de Chile
+%        pablo.pizarro@ing.uchile.cl, ppizarror.com
+%
+% Manual template: [http://latex.ppizarror.com/Template-Informe/]
+% Licencia MIT:    [https://opensource.org/licenses/MIT/]
+
+% CREACIÓN DEL DOCUMENTO
+\documentclass[letterpaper,11pt]{article} % Articulo tamaño carta, 11pt
+\usepackage[utf8]{inputenc} % Codificación UTF-8
+
+% INFORMACIÓN DEL DOCUMENTO
+\def\titulodelinforme {Informe de Práctica Profesional I}
+\def\temaatratar {Web Intelligence Centre}
+
+\def\autordeldocumento {Gabriel Iturra Bocaz}
+\def\nombredelcurso {Práctica Profesional I}
+\def\codigodelcurso {CC-4901}
+
+\def\nombreuniversidad {Universidad de Chile}
+\def\nombrefacultad {Facultad de Ciencias Físicas y Matemáticas}
+\def\departamentouniversidad {Departamento de Ciencias de Computación}
+\def\hola{hola}
+\def\imagendepartamento {departamentos/dcc}
+\def\imagendepartamentoescala {0.2}
+\def\localizacionuniversidad {Santiago, Chile}
+
+% INTEGRANTES, PROFESORES Y FECHAS
+\def\tablaintegrantes {
+\begin{minipage}{0.976\textwidth}
+\begin{flushright}\begin{tabular}{ll}
+	Nombre:
+		& \begin{tabular}[t]{@{}l@{}}
+			Gabriel Iturra Bocaz\\
+		\end{tabular} \\
+	Rut:
+		& \begin{tabular}[t]{@{}l@{}}
+			18.214.940-3 \\
+		\end{tabular} \\
+	Correo:
+		& \begin{tabular}[t]{@{}l@{}}
+			gabrieliturrab@ug.uchile.cl \\
+		\end{tabular} \\
+	Profesor:
+		& \begin{tabular}[t]{@{}l@{}}
+			Alexandre Bergel \\
+		\end{tabular} \\
+	\multicolumn{2}{l}{Fecha de realización: 3-31 de Enero de 2017} \\
+	\multicolumn{2}{l}{Fecha de entrega: 1 de Septiembre de 2017} \\
+	\multicolumn{2}{l}{\localizacionuniversidad}
+\end{tabular}\end{flushright}
+\end{minipage}
+}
+
+% CONFIGURACIONES
+\input{lib/config}
+
+% IMPORTACIÓN DE LIBRERÍAS
+\input{lib/imports}
+
+% IMPORTACIÓN DE FUNCIONES
+\input{lib/function/core}
+\input{lib/function/elements}
+\input{lib/function/equation}
+\input{lib/function/image}
+\input{lib/function/title}
+
+% IMPORTACIÓN DE ENTORNOS
+\input{lib/environments}
+
+% IMPORTACIÓN DE ESTILOS
+\input{lib/styles}
+
+% CONFIGURACIÓN INICIAL DEL DOCUMENTO
+\input{lib/initconf}
+
+% INICIO DE LAS PÁGINAS
+\begin{document}
+
+% PORTADA
+\input{lib/portrait}
+
+% CONFIGURACIÓN DE PÁGINA Y ENCABEZADOS
+\input{lib/pageconf}
+
+% RESUMEN O ABSTRACT
+\begin{resumen}
+	El trabajo fue realizado en el centro de investigación Web Intelligence Centre (WIC). Este consistió en el desarrollo del mapa de objectos claves del \textit{Proyecto AKORI}. \\ \\
+	El \textit{Proyecto AKORI}, cuyo sigla en inglés es \textit{Advanced Kernel for Ocular Research and web Intelligence}, tiene como objetivo desarrollar una herramienta funcional que permita extrapolar el comportamiento de navegación de usuarios en un sitio web a partir de la extracción
+de patrones desde datos analizados con técnicas de minería de datos, eye tracking y electroencefalografía. \\ \\
+	El mapa de objetos claves realizado tiene la meta de mostrar de forma clara y precisa los objetos más relevantes del \textit{DOM} (\textit{Document Object Model}) cuando un usuario navega e ingresa a un sitio web. Con el objetivo de tener un indicador de los principales objetos que un usuario visualiza en los primeros milisegundos de ingresar a un sitio Web, facilitando así el trabajo de los diseñadores y desarrolladores que desean sitios Web más visitados y atractivos. El mapa de objetos claves fue realizado dos etapas, una etapa de migración y otra de \textit{frontend}, siendo esencial la otra etapa de migración para el desarrollo \textit{frontend}. \\ \\
+	El trabajo realizado se encuentra actualmente intregado a la aplicación web oficial del \textit{Proyecto Akori} que se encuentra disponible de sitio web. \\ \\
+	En cuanto a aprendizajes obtenidos en el ámbito técnico de destaca el conocimiento adquirido del framework para desarrollo web \textit{Django}, el lenguaje de script \textit{Javascritp} utilizado principalmente por el lado del cliente, y sistema de control de versiones Git. En cuanto otra habilidades aprendidas se destaca el trabajo en un equipo multidisciplinario.
+\end{resumen}
+
+% TABLA DE CONTENIDOS - ÍNDICE
+\input{lib/index} % Índice, se puede borrar
+
+% CONFIGURACIONES FINALES
+\input{lib/finalconf}
+
+% ======================= INICIO DEL DOCUMENTO =======================
+
+\input{lib/example.tex} % Ejemplo, se puede borrar
+
+% FIN DEL DOCUMENTO
+\end{document}

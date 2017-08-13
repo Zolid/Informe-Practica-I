@@ -1,0 +1,36 @@
+% Template:     Informe/Reporte LaTeX
+% Documento:    Archivo principal
+% Versión:      4.3.6 (30/07/2017)
+% Codificación: UTF-8
+%
+% Autor: Pablo Pizarro R.
+%        Facultad de Ciencias Físicas y Matemáticas
+%        Universidad de Chile
+%        pablo.pizarro@ing.uchile.cl, ppizarror.com
+%
+% Manual template: [http://latex.ppizarror.com/Template-Informe/]
+% Licencia MIT:    [https://opensource.org/licenses/MIT/]
+
+% Se reestablecen headers y footers
+\markboth{}{}
+\newpage
+\ifthenelse{\equal{\hfstyle}{style1}}{
+	\fancyhead[L]{\nouppercase{\leftmark}}}{
+}
+\ifthenelse{\equal{\hfstyle}{style5}}{
+	\fancyhead[R]{\nouppercase{\leftmark}}}{
+}
+\ifthenelse{\equal{\hfstyle}{style6}}{
+	\fancyhead[L]{\nouppercase{\leftmark}}}{
+}
+
+% Se reestablece estilo de títulos
+\sectionfont{\color{\titlecolor} \fontsizetitle \styletitle \selectfont}
+\subsectionfont{\color{\subtitlecolor} \fontsizesubtitle \stylesubtitle \selectfont}
+\subsubsectionfont{\color{\subsubtitlecolor} \fontsizesubsubtitle \stylesubsubtitle \selectfont}
+
+% Se reestablecen números de página y secciones
+\renewcommand{\thepage}{\arabic{page}}
+\setcounter{page}{1}
+\setcounter{section}{0}
+\setcounter{footnote}{0}

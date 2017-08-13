@@ -1,0 +1,75 @@
+% Template:     Informe/Reporte LaTeX
+% Documento:    Índice
+% Versión:      4.3.6 (30/07/2017)
+% Codificación: UTF-8
+%
+% Autor: Pablo Pizarro R.
+%        Facultad de Ciencias Físicas y Matemáticas
+%        Universidad de Chile
+%        pablo.pizarro@ing.uchile.cl, ppizarror.com
+%
+% Manual template: [http://latex.ppizarror.com/Template-Informe/]
+% Licencia MIT:    [https://opensource.org/licenses/MIT/]
+
+\ifthenelse{\equal{\showindex}{true}}{
+	
+	% Crea nueva página y establece estilo de títulos
+	\newpage
+	\tocloftpagestyle{fancy}
+	\sectionfont{\color{\indextitlecolor} \fontsizetitlei \styletitlei \selectfont}
+	
+	% Configuración del punto en índice
+	\ifthenelse{\equal{\showdotontitles}{true}}{
+		\def\cftsecaftersnum {.}
+		\def\cftsubsecaftersnum {.}
+		\def\cftsubsubsecaftersnum {.}
+		}{
+	}
+
+	% Configuración del punto en número de objetos
+	\ifthenelse{\equal{\showdotonobjectindex}{true}}{
+		\def\cftfigaftersnum {.}
+		\def\cfttabaftersnum {.}
+		\def\cftsubfigaftersnum {.}
+		\def\cftlstlistingaftersnum {.}
+		}{
+	}
+
+	% Configuración punto entre objeto y número de página
+	\ifthenelse{\equal{\showdotpagenumindex}{true}}{}{
+		\renewcommand{\cftdot}{}
+	}
+	
+	% Índice de Contenidos
+	\ifthenelse{\equal{\showindexofcontents}{true}}{\tableofcontents}{}
+	
+	% Lista de Figuras
+	\iftotalfigures
+		\ifthenelse{\equal{\showindexoffigures}{true}}{\listoffigures}{}
+	\fi
+	
+	% Lista de Tablas
+	\iftotaltables
+		\ifthenelse{\equal{\showindexoftables}{true}}{\listoftables}{}
+	\fi
+	
+	% Lista del Código Fuente
+	\iftotallstlistings
+		\ifthenelse{\equal{\showindexofcode}{true}}{\lstlistoflistings}{}
+	\fi
+	
+	% Se añade una página en blanco
+	\ifthenelse{\equal{\addemptypagetwosides}{true}}{
+		\vfill
+		\checkoddpage
+		\ifoddpage
+		\else
+			\newpage
+			\null
+			\thispagestyle{empty}
+			\newpage
+			\addtocounter{page}{-1}
+		\fi
+	}{}
+
+}{}
