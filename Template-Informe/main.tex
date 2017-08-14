@@ -15,6 +15,18 @@
 \documentclass[letterpaper,11pt]{article} % Articulo tamaño carta, 11pt
 \usepackage[utf8]{inputenc} % Codificación UTF-8
 
+\usepackage{titlesec}
+
+\newcommand{\chapfnt}{\fontsize{16}{19}}
+\newcommand{\secfnt}{\fontsize{14}{17}}
+\newcommand{\ssecfnt}{\fontsize{12}{14}}
+
+\titleformat{\chapter}[display]
+{\normalfont\chapfnt\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\chapfnt}
+
+\titlespacing*{\chapter} {0pt}{50pt}{40pt}
+
+
 % INFORMACIÓN DEL DOCUMENTO
 \def\titulodelinforme {Informe de Práctica Profesional I}
 \def\temaatratar {Web Intelligence Centre}
@@ -89,14 +101,16 @@
 % CONFIGURACIÓN DE PÁGINA Y ENCABEZADOS
 \input{lib/pageconf}
 
+
+\chapter{Capítulo 1}
 % RESUMEN O ABSTRACT
 \begin{resumen}
 	El trabajo fue realizado en el centro de investigación Web Intelligence Centre (WIC). Este consistió en el desarrollo del mapa de objectos claves del \textit{Proyecto AKORI}. \\ \\
-	El \textit{Proyecto AKORI}, cuyo sigla en inglés es \textit{Advanced Kernel for Ocular Research and web Intelligence}, tiene como objetivo desarrollar una herramienta funcional que permita extrapolar el comportamiento de navegación de usuarios en un sitio web a partir de la extracción
+	El \textit{Proyecto AKORI}, cuyo sigla en inglés es \textit{Advanced Kernel for Ocular Research and web Intelligence}, tiene como objetivo desarrollar una herramienta funcional que permita extrapolar el comportamiento de navegación para usuarios en un sitio web a partir de la extracción
 de patrones desde datos analizados con técnicas de minería de datos, eye tracking y electroencefalografía. \\ \\
-	El mapa de objetos claves realizado tiene la meta de mostrar de forma clara y precisa los objetos más relevantes del \textit{DOM} (\textit{Document Object Model}) cuando un usuario navega e ingresa a un sitio web. Con el objetivo de tener un indicador de los principales objetos que un usuario visualiza en los primeros milisegundos de ingresar a un sitio Web, facilitando así el trabajo de los diseñadores y desarrolladores que desean sitios Web más visitados y atractivos. El mapa de objetos claves fue realizado dos etapas, una etapa de migración y otra de \textit{frontend}, siendo esencial la otra etapa de migración para el desarrollo \textit{frontend}. \\ \\
-	El trabajo realizado se encuentra actualmente intregado a la aplicación web oficial del \textit{Proyecto Akori} que se encuentra disponible de sitio web. \\ \\
-	En cuanto a aprendizajes obtenidos en el ámbito técnico de destaca el conocimiento adquirido del framework para desarrollo web \textit{Django}, el lenguaje de script \textit{Javascritp} utilizado principalmente por el lado del cliente, y sistema de control de versiones Git. En cuanto otra habilidades aprendidas se destaca el trabajo en un equipo multidisciplinario.
+	El mapa de objetos claves realizado tiene la meta de mostrar de forma clara y precisa los objetos más relevantes del \textit{DOM} (\textit{Document Object Model}) cuando un usuario navega e ingresa a un sitio web. Con el objetivo de tener un indicador de los principales objetos que un usuario visualiza en los primeros milisegundos de ingresar a un sitio Web, facilitando así el trabajo de los diseñadores y desarrolladores que desean sitios Web más visitados y atractivos. El mapa de objetos claves fue realizado dos etapas, una etapa de migración y otra etapa de \textit{frontend}, siendo esencial la xetapa de migración para el desarrollo \textit{frontend}. \\ \\
+	El trabajo realizado se encuentra actualmente intregado a la aplicación web oficial del \textit{Proyecto Akori} que se encuentra disponible en el sitio web. \\ \\
+	En cuanto a aprendizajes obtenidos en el ámbito técnico se destaca el conocimiento adquirido del framework para desarrollo web \textit{Django}, el lenguaje script \textit{Javascritp} utilizado principalmente por el lado del cliente, y sistema de control de versiones Git. En cuanto otra habilidades aprendidas se destaca el trabajo en un equipo multidisciplinario.
 \end{resumen}
 
 % TABLA DE CONTENIDOS - ÍNDICE

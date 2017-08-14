@@ -13,50 +13,24 @@
 
 % NUEVA SECCIÓN
 % Las secciones se inician con \section, si se quiere una sección sin "número" se pueden usar las funciones \sectionanum (sección sin número) o la función \sectionanumnoi para crear el mismo título sin numerar y sin aparecer en el índice
-\section{Capitulo 1}
+\chapter{Capítulo 2}
+\section{Introducción}
 	
 	% SUB-SECCIÓN
 	% Las sub-secciones se inician con \subsection, si se quiere una sub-sección sin "número" se pueden usar las funciones \subsectionanum (nuevo subtítulo sin numeración) o la función \subsectionanumnoi para crear el mismo subtítulo sin numerar y sin aparecer en el índice
-	\subsection{Una breve introducción}
+	\subsection{Lugar de Trabajo}
 		
-		Este es un párrafo, puede contener múltiples \quotes{Expresiones} así como fórmulas o referencias\footnote{Las referencias se hacen utilizando la expresión \texttt{\textbackslash label}\{etiqueta\}.} a fórmulas como \eqref{eqn:identidad-imposible}. A continuación se muestra un ejemplo de inserción de imágenes o figuras (como la Figura \ref{img:testimage}) con el comando \texttt{\textbackslash insertimage}:
+		\newpar{La prática profesional se realizó en el Web Intelligence Centre \cite{ref1}, en adelante WIC, es un centro de investigación depediente de la Facultad de Ciencias Físicas y Matemáticas de la Universidad de Chile, cuya misión es desarrollar investigación en el campo de Tecnologías de Información creando soluciones para abordar problemas complejos de ingeniería utilizando herramientas basadas en la Web de las Cosas. Se encuentra ubicado en Beaucheff \#851, Santiago, Chile. El trabajo se realizó de forma presencial en las instalaciones del centro, entre el 3 al 31 de Enero de 2017.}
 		
-		% Para insertar una imagen se puede usar la función \insertimage la cual toma un primer parámetro opcional para definir una etiqueta (dentro de los corchetes), luego toma la dirección de la imagen, sus parámetros (en este caso se definió la escala de 0.15) y una leyenda
-		\insertimage[\label{img:testimage}]{ejemplos/test-image.png}{scale=0.15}{Where are you? de \quotes{Internet}.}
-		
-		A continuación\footnote{Como se puede observar las funciones \texttt{\textbackslash insert...} añaden un párrafo automáticamente.} se muestra un ejemplo de inserción de ecuaciones simples con el comando \texttt{\textbackslash insertequation}:
-		
-		% Se inserta una ecuación, el primer parámetro entre corchetes es opcional (permite identificar con una etiqueta para poder referenciarlo después con \ref), seguido de aquello se escribe la ecuación en modo bruto sin signos peso
-		\insertequation[\label{eqn:identidad-imposible}]{\pow{a}{k}=\pow{b}{k}+\pow{c}{k} \quad \forall k>2}
-		
-		% Se añade parrafo de prueba, notar que no se requiere añadir un salto de línea después de insertar una función
-		Nunc sed pede. Praesent vitae lectus. Praesent neque justo, vehicula eget, interdum id, facilisis et, nibh. Phasellus at purus et libero lacinia dictum. Fusce aliquet. Nulla eu ante placerat leo semper dictum. Mauris metus. Curabitur lobortis. Curabitur sollicitudin hendrerit nunc.
-		
-		% Los párrafos se pueden añadir con \newp, esta función se hizo para evitar errores y warnings por parte del compilador
-		\newp Este es un nuevo párrafo insertado con el comando \texttt{\textbackslash newp}. Si no te gustan los comandos \texttt{\textbackslash newp}, \texttt{\textbackslash newpar} o \texttt{\textbackslash newparnl} simplemente puedes usar los salto de línea convencionales acompañado de \texttt{\textbackslash par}. Además puedes editar las funciones, definidas en el archivo \texttt{lib/functions.tex}.
-		
-	% SUB-SECCIÓN
-	\subsection{Añadiendo tablas}
-		
-		\newp También puedes usar tablas, insertarlas es muy fácil, puedes usar el plugin \href{https://www.ctan.org/tex-archive/support/excel2latex/}{Excel2Latex} \cite{ref2} de Excel para convertir las tablas a \LaTeX\xspace o bien utilizar el \quotes{creador de tablas online} \cite{ref3}.
-		
-		% Tabla generada con Excel2Latex
-		\begin{table}[htbp]
-			\centering
-			\caption{Ejemplo de tablas.}
-			\begin{tabular}{ccc}
-				\hline
-				\textbf{Columna 1} & \textbf{Columna 2} & \textbf{Columna 3} \bigstrut\\
-				\hline
-				$\omega$ & $\nu$ & $\delta$ \bigstrut[t]\\
-				$\beta$ & $\gamma$ & $\epsilon$ \\
-				$\varepsilon$ & $\upsilon$ & $\varphi$\\
-				$\Phi$ & $\Theta$ & $\varSigma$ \bigstrut[b]\\
-				\hline
-			\end{tabular}
-			\label{tab:tabla-1}
-		\end{table}
 
+	\subsection{Grupo de trabajo}
+	
+		\newpar{En el WIC trabajan investigadores de tiempo completo, desarrolladores con experiencia, profesionales del área de la salud debido a que muchos de sus proyectos son en conjunto con la Facultad de Medicina, estudiantes de pregrado de forma part-time y estudiantes de magister del Departamento de Ingeniería Industrial. En particular en la oficina donde se realizó el trabajo era usada regularmente por 6 personas, de los cuales uno de ellos era otro practicante que también trabajaba en el \textit{Proyecto Akori}, que es dirigido por el Ingeniero de Proyecto, Felipe Vera, quien fue el tutor del practicante.}
+		
+	\subsection{Equipos y Software}	
+	
+		\subsection{hajaha}
+		
 % NUEVA SECCIÓN
 \newpage
 \section{Aquí un nuevo tema}
@@ -283,9 +257,8 @@ end
 \newpage % Salto de página
 \begin{references}
 	\bibitem{ref1}
-	Template Informe en \LaTeX.
-	\textit{¡Revisa el manual online de este template!} \\
-	\url{http://ppizarror.com/Template-Informe/}
+	Sitio Web del WIC.
+	\url{http://www.wic.uchile.cl}
 	
 	\bibitem{ref2}
 	Excel2Latex.
