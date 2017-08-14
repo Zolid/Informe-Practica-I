@@ -2,15 +2,15 @@
 \contentsline {section}{\numberline {1}Introducci\IeC {\'o}n}{1}{section.1}
 \contentsline {subsection}{\numberline {1.1}Lugar de Trabajo}{1}{subsection.1.1}
 \contentsline {subsection}{\numberline {1.2}Grupo de trabajo}{1}{subsection.1.2}
-\contentsline {subsection}{\numberline {1.3}Equipos y Software}{1}{subsection.1.3}
-\contentsline {subsection}{\numberline {1.4}hajaha}{1}{subsection.1.4}
-\contentsline {section}{\numberline {2}Aqu\IeC {\'\i } un nuevo tema}{2}{section.2}
-\contentsline {subsection}{\numberline {2.1}Haciendo informes como un profesional}{2}{subsection.2.1}
-\contentsline {subsection}{\numberline {2.2}Otros p\IeC {\'a}rrafos m\IeC {\'a}s normales}{3}{subsection.2.2}
-\contentsline {subsection}{\numberline {2.3}Ejemplos de inserci\IeC {\'o}n de c\IeC {\'o}digo fuente}{4}{subsection.2.3}
-\contentsline {section}{\numberline {3}M\IeC {\'a}s ejemplos}{5}{section.3}
-\contentsline {subsection}{\numberline {3.1}Listas y Enumeraciones}{5}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Otros}{5}{subsection.3.2}
-\contentsline {section}{Anexo \numberline {A}C\IeC {\'a}lculos realizados}{6}{Anexo.1.Alph1}
-\contentsline {section}{Anexo \numberline {B}M\IeC {\'a}s c\IeC {\'a}lculos}{7}{Anexo.1.Alph2}
-\contentsline {section}{Referencias}{8}{section*.12}
+\contentsline {subsection}{\numberline {1.3}Equipos y Software}{2}{subsection.1.3}
+\contentsline {subsubsection}{\numberline {1.3.1}Software}{2}{subsubsection.1.3.1}
+\contentsline {section}{\numberline {2}Aqu\IeC {\'\i } un nuevo tema}{3}{section.2}
+\contentsline {subsection}{\numberline {2.1}Haciendo informes como un profesional}{3}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Otros p\IeC {\'a}rrafos m\IeC {\'a}s normales}{4}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Ejemplos de inserci\IeC {\'o}n de c\IeC {\'o}digo fuente}{5}{subsection.2.3}
+\contentsline {section}{\numberline {3}M\IeC {\'a}s ejemplos}{6}{section.3}
+\contentsline {subsection}{\numberline {3.1}Listas y Enumeraciones}{6}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Otros}{6}{subsection.3.2}
+\contentsline {section}{Anexo \numberline {A}C\IeC {\'a}lculos realizados}{7}{Anexo.1.Alph1}
+\contentsline {section}{Anexo \numberline {B}M\IeC {\'a}s c\IeC {\'a}lculos}{8}{Anexo.1.Alph2}
+\contentsline {section}{Referencias}{9}{section*.12}

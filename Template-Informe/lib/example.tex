@@ -13,7 +13,6 @@
 
 % NUEVA SECCIÓN
 % Las secciones se inician con \section, si se quiere una sección sin "número" se pueden usar las funciones \sectionanum (sección sin número) o la función \sectionanumnoi para crear el mismo título sin numerar y sin aparecer en el índice
-\chapter{Capítulo 2}
 \section{Introducción}
 	
 	% SUB-SECCIÓN
@@ -26,10 +25,39 @@
 	\subsection{Grupo de trabajo}
 	
 		\newpar{En el WIC trabajan investigadores de tiempo completo, desarrolladores con experiencia, profesionales del área de la salud debido a que muchos de sus proyectos son en conjunto con la Facultad de Medicina, estudiantes de pregrado de forma part-time y estudiantes de magister del Departamento de Ingeniería Industrial. En particular en la oficina donde se realizó el trabajo era usada regularmente por 6 personas, de los cuales uno de ellos era otro practicante que también trabajaba en el \textit{Proyecto Akori}, que es dirigido por el Ingeniero de Proyecto, Felipe Vera, quien fue el tutor del practicante.}
-		
-	\subsection{Equipos y Software}	
+\newpage
+\subsection{Equipos y Software}	
 	
-		\subsection{hajaha}
+		\subsubsection{Software}
+			\newpar{El software utilizado para desarrollar el trabajo fue Python como lenguaje de
+			programación (a través del IDLE Pycharm proporcionado por JetBrains \cite{ref2}), el framework para aplicaciones Web Python, Django,  Git para el manejo de control de versiones, el navegador sin interfaz gráfico (conocido como headless browser), PhantomJS, el entorno de pruebas software para aplicaciones web, Selenium, dos bibliotecas de Python, una para edición de imágenes, Python Imaging Library, y otra para la generación de un mapa de colores, Matplotlib, y el sistema operativo Ubuntu. Además cabe descatar del aplicación del \textit{Proyecto AKORI} en la cual se trabajo. A continuación se presenta una breve descripción de los elementos más relevantes para el desarrollo y compresión del trabajo realizado:}
+			\begin{enumerate}
+				\item \textbf{Python}: Es un lenguaje de programación interpretado cuya filosofía 
+				hace hincapié en una sintaxis que favorezca un código legible. Se trata de un 
+				lenguaje de programación multiparadigma, ya que soporta orientación a objetos, 
+				progrmación imperativa y, en menor medida, programación funcional. En el contexto 
+				del trabajo Python sirvió como lenguaje de programación por el lado del servidor 
+				para la aplicación web que actualmente funciona como prototipo al \textit{Proyecto AKORI}. 
+				\item \textbf{Django}: Es un framework de desarrollo web de código abierto (\textit{open source}), escrito en \textit{Python} que respeta el patrón de diseño conocido como 
+				Modelo-Vista-Controlador (MCV), que en pocas palabras separa los componentes más 
+				importantes de una aplicación es tres grandes grupos, el modelo donde descansan los
+				datos de la aplicación (Base de Datos), la vista que se encarga de todo el aspecto 
+				visual de una aplicación, y los controladores que ejecutan toda la lógica de
+				funcionamiento. \\ 
+				En el caso de \textit{Django} tiene la perculiaridad que las vistas reciben el 
+				nombre templates (encargados del \textit{fontend} de la aplicación) y los 
+				controladores se llaman vistas (Views en inglés y encargadas del \textit{backend}). 	
+				Para el trabajo realizado fue necesario tomar la aplicación desarrollada, anadir
+				cambios en los templates y agregar algunas funciones a las vistas para controlar 
+				la lógica de la mapa de objetos que en las próximas secciones serán explicadas en 
+				detalle.
+				\item \textbf{PhantomJS}: Es un navegador sin interfaz gráfica que sirve para 
+				realizar pruebas a una aplicación que se encuentra en fase de desarrollo. Fue 
+				utilizado para realizar web scrapping, término que describe la recolección de 
+				información a través de la Web usando programas automatizados.
+				\item \textbf{Selenium}: Es un entorno de pruebas de software para aplicaciones 
+				basadas en la web
+			\end{enumerate}
 		
 % NUEVA SECCIÓN
 \newpage
@@ -261,9 +289,8 @@ end
 	\url{http://www.wic.uchile.cl}
 	
 	\bibitem{ref2}
-	Excel2Latex.
-	\textit{Importa de forma sencilla tus tablas de Excel a \LaTeX.} \\
-	\url{https://www.ctan.org/tex-archive/support/excel2latex/}
+	PyCharm IDLE
+	\url{https://www.jetbrains.com/pycharm/}
 	
 	\bibitem{ref3}
 	ShareLatex.
