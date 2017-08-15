@@ -68,7 +68,41 @@
 	\subsubsection{\textit{Proyecto AKORI}}
 	
 		\newpar{Para contextualizar de mayor forma el trabajo de práctica realizado a continuación 
-		se explicará brevemente que es el \textit{Proyeto AKORI} y cuál es su meta a seguir. }
+		se explicará brevemente que es el \textit{Proyeto AKORI} y cuál es su meta a seguir. \\ 
+		Como meta general es desarrollar una plataforma virtual que permita extrapolar el 
+		comportamiento de navegación cuandos los usuarios ingresan a sitio web a partir de la 
+		extracción de patrones de datos analizados con técnicas de minería de datos, eye tracking, 
+		y encefalografía. Para lograr esto, el proyecto se divide en 5 grandes etapas que son las 
+		siguientes:
+			\begin{enumerate}
+				\item Adaptar y refinar un repositorio de datos elaborado con estímulos visuales obtenidos desde sitios web, incorporando los datos de un mayor número de personas y diferenciándolos según variables sociodemográficas.
+				\item Adaptar e integrar algoritmos de minería de datos masivos (big data) para determinar patrones que permitan caracterizar y extrapolar la navegación de un usuario en un sitio web mediante análisis de exploración visual utilizando datos provenientes desde eye-tracking, dilatación pupilar y electroencefalografía.
+				\item Diseñar, construir y evaluar una plataforma prototipo que integre algoritmos de web Intelligence, un repositorio de datos en base a estímulos visuales y electroencefalografía con patrones de comportamiento web para extrapolar las preferencias y el comportamiento de potenciales usuarios web.
+				\item Testear y evaluar funcionalidades del sitio, capacidad del sistema para lograr lo que se desea y minimizar errores de uso; además de medir el nivel de usabilidad (facilidad de aprender y recordar, eficiencia, minimización de errores de uso y satisfacción del usuario).
+				\item Prospectar y valorizar el mercado, como también la propiedad intelectual. Definir una estrategia para el empaquetamiento y transferencia de la tecnología.
+			\end{enumerate}
+			A pesar de que las investigaciones continúan, existe un propotipo de la aplicación web
+			con algunos módulos (mapas de estadísticos) en desarrollo y otros ya implementados. A continuación se escriben los modulos ya implementados, incluido el que desarrollo el practicante.
+				\begin{enumerate}
+					\item \textbf{Mapa de Fijación Ocular}: Contruye un mapa de calor con las zonas
+					más probables de fijación ocular en un sitio web a partir de una escala de 
+					colores los clientes pueden visualizar las zonas mas vistas en rojo, las menos 
+					vistas en azul y las que tiene ninguna probabilidad de ser vistas adquieren un 
+					color en escala de grises.
+					\item \textbf{Mapa de Dilatación Pupilar}: Construye un mapa calor siguiendo una
+					escala similar al mapa de fijación ocular, con la diferencia que las zonas que 
+					adquieren colores más intensos muestra donde es más probable que un usuario haga
+					un click dentro de la página analizada.
+					\item \textbf{Mapa de Objetos de Claves}: Se construye un mapa que muestra los
+					objetos web más relevantes que un usuario visualiza al ingresar a un sitio web, 
+					los objetos más importantes son coloreados con más oscuros que los menos vistos. 
+				\end{enumerate}
+			Además de los módulos explicados anteriormente, se está trabajando en tres mapas más 
+			que aún no han sido llevados a producción estos son, el índice de claridad, el mapa de 
+			probabilidad de ticks, y el mapa de percepción; donde los primeros dos son complementos
+			a los ya implementados, y el último mostrará a donde es más probable que el usuario 
+			dirigirá la mirada los primeros tres segundos de ingresar al sitio web.				 
+			}
 		
 	\subsubsection{Equipo}
 	
