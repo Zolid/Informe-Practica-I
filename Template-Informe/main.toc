@@ -4,16 +4,16 @@
 \contentsline {subsection}{\numberline {1.2}Grupo de trabajo}{1}{subsection.1.2}
 \contentsline {subsection}{\numberline {1.3}Equipos y Software}{2}{subsection.1.3}
 \contentsline {subsubsection}{\numberline {1.3.1}Software}{2}{subsubsection.1.3.1}
-\contentsline {subsubsection}{\numberline {1.3.2}\textit {Proyecto AKORI}}{2}{subsubsection.1.3.2}
+\contentsline {subsubsection}{\numberline {1.3.2}\textit {Proyecto AKORI}}{3}{subsubsection.1.3.2}
 \contentsline {subsubsection}{\numberline {1.3.3}Equipo}{3}{subsubsection.1.3.3}
 \contentsline {subsection}{\numberline {1.4}Situaci\IeC {\'o}n Previa}{3}{subsection.1.4}
 \contentsline {section}{\numberline {2}Conclusiones}{4}{section.2}
-\contentsline {section}{\numberline {3}Aqu\IeC {\'\i } un nuevo tema}{4}{section.3}
-\contentsline {subsection}{\numberline {3.1}Haciendo informes como un profesional}{4}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Otros p\IeC {\'a}rrafos m\IeC {\'a}s normales}{5}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Ejemplos de inserci\IeC {\'o}n de c\IeC {\'o}digo fuente}{6}{subsection.3.3}
-\contentsline {section}{\numberline {4}M\IeC {\'a}s ejemplos}{7}{section.4}
-\contentsline {subsection}{\numberline {4.1}Listas y Enumeraciones}{7}{subsection.4.1}
+\contentsline {section}{\numberline {3}Aqu\IeC {\'\i } un nuevo tema}{5}{section.3}
+\contentsline {subsection}{\numberline {3.1}Haciendo informes como un profesional}{5}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Otros p\IeC {\'a}rrafos m\IeC {\'a}s normales}{6}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Ejemplos de inserci\IeC {\'o}n de c\IeC {\'o}digo fuente}{7}{subsection.3.3}
+\contentsline {section}{\numberline {4}M\IeC {\'a}s ejemplos}{8}{section.4}
+\contentsline {subsection}{\numberline {4.1}Listas y Enumeraciones}{8}{subsection.4.1}
 \contentsline {subsection}{\numberline {4.2}Otros}{8}{subsection.4.2}
 \contentsline {section}{Anexo \numberline {A}C\IeC {\'a}lculos realizados}{9}{Anexo.1.Alph1}
 \contentsline {section}{Anexo \numberline {B}M\IeC {\'a}s c\IeC {\'a}lculos}{10}{Anexo.1.Alph2}
