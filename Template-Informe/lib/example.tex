@@ -154,15 +154,50 @@
 \end{lstlisting}
 	\newpar{A grandes rangos este código realizaba lo siguiente, almacenaba en la variable 
 	\textit{query} todos los objetos web provenientes del \textit{DOM} en un objeto de la clase
-	\textit{ArrayList}, para luego a entrar a un ciclo donde se dibujaba un rectángulo (que 				encerraba al objeto web) de acuerdo a la posición y las dimensiones de cada objeto web sobre una 
+	\textit{ArrayList}, para luego a entrar a un ciclo donde se dibujaba un rectángulo 
+	(que encerraba al objeto web) de acuerdo a la posición y las dimensiones de cada objeto web sobre una 
 	imagen tomada del sitio web que se estaba analizando. Como en está versión no existía una 
 	clase especial para el mapa de objetos solo se incluye el extracto del código relacionado al 
 	trabajo realizado. \\ \\
-	Para el practicante entender todas clases de la versión \textit{JAVA} no fue una tarea difícil
+	Para el practicante, entender todas clases de la versión \textit{JAVA} no fue una tarea difícil
 	debido a que contaba con experiencia previa programando con dichas tecnologías.}
 			
 			
 		\subsubsection{Versión \textit{Django}}
+			\newpar{Previo al trabajo del practicante solo existía una implementación de los
+			mapas de fijación ocular y dilatación pupilar. Como esta versión estaba hecha 
+			utilizando el framework \textit{Django}, seguía los principios de programación 
+			de \textit{Python}, además de la clara separación de componentes que \textit{Django}
+			administra (patrón MVC), que es muy diferente a la arquitectura que ofrece 
+			la programación web \textit{JAVA} y su contenedor de \textit{Servlet}. Sin 
+			embargo, la funcionalidad e interfaz gráfica era la misma que la versión previa
+			a la migración del lenguaje que manejaba el servidor web.}
+	
+	\subsection{Descripción general del trabajo realizado} 
+	
+		\newpar{Como ya se mencionó en secciones anteriores, el objetivo del trabajo desarrollado
+		fue el proveer un mapa que resaltará los objetos web que un usuario visualiza a los 
+		pocos milisegundos de ingresar a un sitio web. Como no existía una versión del mapa 
+		de objetos en la segunda versión de la aplicación, como primera instancia se agregó
+		una versión preliminar del mapa de objetos tal como existía en la primera versión 
+		(ver figura ?) que descataba todos los elementos del \textit{DOM} de un documento 
+		\textit{HTML}, luego se ideo un mapa de objetos que diferencia los elementos más 
+		a menos vistos siguiendo un algoritmo de suma de matrices, donde la matriz era 
+		gráficada para generar una imagen que era fusionada a otra imagen tomanda del 
+		sitio web analizado bajando la opacidad en cada una. \\ \\
+		Para llevar a cabo el trabajo fue dividido por el practicante en tres etapas que se 
+		describen brevemente a continuación:
+			\begin{enumerate}
+				\item \textbf{Exploración del código previo}: Dado que el trabajo consitió
+				en agregar el mapa de objetos en la una tecnología desconocida por el 
+				practicante, fue necesario estudiar el framework tanto su sintaxis como 
+				su filosofía de programación, para luego comenzar a explorar el código 
+				existente dentro de la aplicación de forma de identificar aquellas clases 
+				y funciones claves involucradas a la partes a extender.
+				\item \textbf{Migración del código}:
+				\item \textbf{Etapa de FontEnd}:
+			\end{enumerate}
+			
 % NUEVA SECCIÓN
 \newpage
 \section{Conclusiones}
