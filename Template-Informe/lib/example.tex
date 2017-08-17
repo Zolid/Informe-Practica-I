@@ -214,6 +214,22 @@
 			
 \newpage
 \section{Trabajo Realizado}
+
+	\newpar{Como se ha mencionado previamente el trabajo consitió en la creación de un mapa 
+	de los objetos web (cita) más relevantes que un usuario visualiza mientras navega en un sitio web.
+	Los datos
+	que se usaron para indicar donde se encontraban los objetos claves eran recibidos desde el 
+	mapa de fijación ocular (que se explicó en las secciones pasadas) que fueron obtenidos por 
+	algoritmos de minería de datos, eye tracking, y electroencefalografía. Estos datos son el 
+	punto de partida del mapa de objetos implementado. Los datos eran representados en una imagen basada en un \textit{screenshot} (cite ?) del sitio que se estaba 
+	analizando, la imagen tenía una coloración más intensa en los 
+	lugares más probables (ver figura ?) que un usuarios fijaría su atención en los primeros milisegundos. Luego se realizaba conversión de la imagen de visualización a sus representación matricial con números enteros entre 0 a 255 (que es la escala de colores rgb cite ?) los lugares dentro de la matriz que tenían numeros más altos correspondían a las zonas más probables de observación. 
+	Finalmente, se gráficaba dicha matriz generando una imagen como la de la figura ?, dicha
+	imagen se fusionaba con un \textit{screenshot} del sitio web produciendo la imagen 
+	que se puede apreciar en la figura, los colores más oscuros representaban los objetos más
+	vistos, el último paso fue agregar estos cambios a la aplicación oficial. \\ \\
+	A continuación se explicará en profundidad el detalle del proceso descrito y las etapas 
+	mencionadas en la sección anterior.}
 % NUEVA SECCIÓN
 \newpage
 \section{Conclusiones}
