@@ -11,6 +11,8 @@
 \contentsline {subsubsection}{\numberline {1.4.2}Versi\IeC {\'o}n \textit {Django}}{5}{subsubsection.1.4.2}
 \contentsline {subsection}{\numberline {1.5}Descripci\IeC {\'o}n general del trabajo realizado}{5}{subsection.1.5}
 \contentsline {section}{\numberline {2}Trabajo Realizado}{7}{section.2}
+\contentsline {subsection}{\numberline {2.1}Etapa 0}{7}{subsection.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}Algoritmo Mapa de Objetos versi\IeC {\'o}n \textit {Java}}{7}{subsubsection.2.1.1}
 \contentsline {section}{\numberline {3}Conclusiones}{8}{section.3}
 \contentsline {section}{\numberline {4}Aqu\IeC {\'\i } un nuevo tema}{9}{section.4}
 \contentsline {subsection}{\numberline {4.1}Haciendo informes como un profesional}{9}{subsection.4.1}
