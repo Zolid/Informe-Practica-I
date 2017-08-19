@@ -62,8 +62,9 @@
 				utilizado para realizar web scrapping, término que describe la recolección de 
 				información a través de la Web usando programas automatizados.
 				\item \textbf{Selenium}: Es un entorno de pruebas de software para aplicaciones 
-				basadas en la web. Se usó para realizar el web scrapping junto a PhantomJs sobre
-				los distintas sitios web que fueron testeados.
+				basadas en la web, con bibliotecas existentes para muchos lenguajes de programación
+				como \textit{Python} y \textit{JAVA}.Se usó para realizar el web scrapping 
+				junto a PhantomJs sobre los distintas sitios web que fueron testeados.
 			\end{enumerate}
 	\subsubsection{\textit{Proyecto AKORI}}
 	
@@ -119,14 +120,14 @@
 		\textit{Python} utilizando el framework \textit{Django} que actualmente está producción 
 		y la otra escrita en \textit{Java} usando \textit{Servlet} que ya no se encuentra en
 		funcionamiento.} 
-		\subsubsection{Versión \textit{Java} con \textit{Servlet}}
+		\subsubsection{Versión \textit{Java} con \textit{Servlet}} \label{subseccion141}
 			\newpar{En esta versión estaban implementados la mayoría de los modulos que fueron 
 			explicados en la sección anterior. Además una versión del mapa de objetos claves
 			que sin embargo, resaltaba todos elementos del sitio web (ver figura ?) y no filtraba
 			los elementos de mayor a menor interés. En el siguiente extracto del código se puede 
 			apreciar el algoritmo del mapa de objetos claves.}
 			
-			\begin{lstlisting}[style=Java, caption={Código mapa de objetos versión 1.\label{codigo-java}}]
+			\begin{lstlisting}[style=Java, caption={Código mapa de objetos versión 1.\label{version-java}}]
            	query = driver.findElements(By.tagName(temp.tagName()));
             for (WebElement temp1 : query) {
                      try{
@@ -242,9 +243,66 @@
         \subsubsection{Algoritmo Mapa de Objetos versión \textit{Java}}
         
         \newpar{A pesar de que existía un mapa de objetos en la versión 1 del proyecto, el algoritmo
-        no contaba con una clase propia dentro del código de la aplicación. Se explicará en mayor 
-        profundidad el código de la subsecció}
-% NUEVA SECCIÓN
+        no contaba con una clase propia dentro del código de la aplicación. Realizando una 	
+        explicación más detallada del código de la subsección \ref{subseccion141} 
+        (ver código \ref{version-java})}
+        
+	\subsection{Etapa de migración}
+	
+	\newpar{Una vez encontradas las clases involucradas y aprendido el funcionamiento de 
+	\textit{Django}, se procedió a migrar el algoritmo del mapa de objetos ya existente
+	al lenguaje \textit{Python} testeando el resultado con \textit{PhantomJS} y la biblioteca
+	de \textit{Selenium} para \textit{Python}. La depuración del algoritmo puede ser dividada
+	en las siguientes fases para implementar el mapa:}
+	\newpage
+		\begin{enumerate}
+			\item \textbf{Importación}: Para migración del código se utilizaron las siguientes
+			bibliotecas de Python:
+			\begin{lstlisting}[style=Python, caption={Bibliotecas utilizadas para el mapa de objetos.}]
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from PIL import Image, ImageDraw
+\end{lstlisting}
+			\item \textbf{Obtención  del \textit{Screenshot} del sitio web}: Una vez elegida la
+			url del sitio web a analizar, se obtenía un \textit{screenshot} del sitio web con 
+			la ayuda de \textit{PhantomJS} seteando el tamaño de la ventana y la url para luego
+			guardala dentro del servidor. Luego utilizando la biblioteca de edición de imágenes
+			se instanciaban los objetos \textit{Imagen} que abría que la imagen a editar y 
+			\textit{ImageDraw} que editaba la imagen abierta, en este caso el \textit{screenshot}.
+			\begin{lstlisting}[style=Python, caption={Destacación de objetos web}]
+driver = webdriver.PhantomJS()
+driver.set_window_size(1301, 744)
+driver.get("http://google.com")
+driver.save_screenshot("/path/screenshot.png")
+image = Image.open("/path/screenshot.png")
+draw = ImageDraw.Draw(image)
+\end{lstlisting}
+			\item \textbf{Obtención de objetos web}: Con la biblioteca \textit{Selenim} era
+			posible conseguir todos objetos que poseía el sitio, utilizando una consulta que
+			obtenía todos los elementos dentro del body que manejaban un \textit{tag name},
+			retornando una lista con los objetos web.
+\begin{lstlisting}[style=Python, caption={Consulta al body del sitio web.}]
+element = driver.find_element(By.TAG_NAME, 'body')
+body = element.find_elements(By.XPATH, './/*')
+\end{lstlisting}
+		\item \textbf{Destacación de objetos web}: Finalmente, a través de un ciclo se recorría
+		la lista de elementos dibujando un rectangulo en el \textit{screenshot} que descataba la 
+		posición de dicho objetos en cada iteración. La posición exacta la entraba la librería 
+		\textit{Selenium}.
+\begin{lstlisting}[style=Python, caption={Consulta al body del sitio web.}]
+for b in body:
+	x1 = b.location['x']
+	y1 = b.location['y']
+	x2 = x1 + b.size['width']
+	y2 = y1 + b.size['height']
+	draw.rectangle([x1, y1, x2, y2], outline = 255)
+\end{lstlisting}
+		\end{enumerate}				
+		
+	\newpar{El resultado era un mapa igual al de la figura ?. Algunas partes del código han
+	sido omitidas debido a que no formaban parte escencial de la explicación.}
+
+% NUEVA SECCIÓ
 \newpage
 \section{Conclusiones}
  	\newpar{Los resultados del trabajo presentado en este informe fueron considerados por el tutor
@@ -342,21 +400,7 @@ def incmatrix(genl1, genl2):
 	VT = np.zeros((n*m, 1), int) # Comentario 2
 \end{lstlisting}
 
-\begin{lstlisting}[style=Java, caption={Ejemplo en Java.\label{codigo-java}}]
-import java.io.IOException; 
-import javax.servlet.*;
 
-// Hola mundo
-public class Hola extends GenericServlet {
-	public void service(ServletRequest request, ServletResponse response)
-	throws ServletException, IOException{
-		response.setContentType("text/html");
-		PrintWriter pw = response.getWriter();
-		pw.println("Hola, mundo!");
-		pw.close();
-	}
-}
-\end{lstlisting}
 
 \begin{lstlisting}[style=Matlab, caption={Ejemplo en Matlab.\label{codigo-matlab}}]
 % Se crea gráfico
