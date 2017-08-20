@@ -2,26 +2,28 @@
 \contentsline {section}{\numberline {1}Introducci\IeC {\'o}n}{1}{section.1}
 \contentsline {subsection}{\numberline {1.1}Lugar de Trabajo}{1}{subsection.1.1}
 \contentsline {subsection}{\numberline {1.2}Grupo de trabajo}{1}{subsection.1.2}
-\contentsline {subsection}{\numberline {1.3}Equipos y Software}{2}{subsection.1.3}
-\contentsline {subsubsection}{\numberline {1.3.1}Software}{2}{subsubsection.1.3.1}
-\contentsline {subsubsection}{\numberline {1.3.2}\textit {Proyecto AKORI}}{3}{subsubsection.1.3.2}
-\contentsline {subsubsection}{\numberline {1.3.3}Equipo}{4}{subsubsection.1.3.3}
-\contentsline {subsection}{\numberline {1.4}Situaci\IeC {\'o}n Previa}{4}{subsection.1.4}
+\contentsline {subsection}{\numberline {1.3}Equipos y Software}{1}{subsection.1.3}
+\contentsline {subsubsection}{\numberline {1.3.1}Software}{1}{subsubsection.1.3.1}
+\contentsline {subsubsection}{\numberline {1.3.2}\textit {Proyecto AKORI}}{2}{subsubsection.1.3.2}
+\contentsline {subsubsection}{\numberline {1.3.3}Equipo}{3}{subsubsection.1.3.3}
+\contentsline {subsection}{\numberline {1.4}Situaci\IeC {\'o}n Previa}{3}{subsection.1.4}
 \contentsline {subsubsection}{\numberline {1.4.1}Versi\IeC {\'o}n \textit {Java} con \textit {Servlet}}{4}{subsubsection.1.4.1}
-\contentsline {subsubsection}{\numberline {1.4.2}Versi\IeC {\'o}n \textit {Django}}{5}{subsubsection.1.4.2}
+\contentsline {subsubsection}{\numberline {1.4.2}Versi\IeC {\'o}n \textit {Django}}{4}{subsubsection.1.4.2}
 \contentsline {subsection}{\numberline {1.5}Descripci\IeC {\'o}n general del trabajo realizado}{5}{subsection.1.5}
-\contentsline {section}{\numberline {2}Trabajo Realizado}{7}{section.2}
-\contentsline {subsection}{\numberline {2.1}Etapa 0}{7}{subsection.2.1}
-\contentsline {subsubsection}{\numberline {2.1.1}Algoritmo Mapa de Objetos versi\IeC {\'o}n \textit {Java}}{7}{subsubsection.2.1.1}
-\contentsline {subsection}{\numberline {2.2}Etapa de migraci\IeC {\'o}n}{7}{subsection.2.2}
-\contentsline {section}{\numberline {3}Conclusiones}{9}{section.3}
-\contentsline {section}{\numberline {4}Aqu\IeC {\'\i } un nuevo tema}{10}{section.4}
-\contentsline {subsection}{\numberline {4.1}Haciendo informes como un profesional}{10}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Otros p\IeC {\'a}rrafos m\IeC {\'a}s normales}{11}{subsection.4.2}
-\contentsline {subsection}{\numberline {4.3}Ejemplos de inserci\IeC {\'o}n de c\IeC {\'o}digo fuente}{12}{subsection.4.3}
-\contentsline {section}{\numberline {5}M\IeC {\'a}s ejemplos}{12}{section.5}
-\contentsline {subsection}{\numberline {5.1}Listas y Enumeraciones}{12}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2}Otros}{13}{subsection.5.2}
-\contentsline {section}{Anexo \numberline {A}C\IeC {\'a}lculos realizados}{14}{Anexo.1.Alph1}
-\contentsline {section}{Anexo \numberline {B}M\IeC {\'a}s c\IeC {\'a}lculos}{15}{Anexo.1.Alph2}
-\contentsline {section}{Referencias}{16}{section*.12}
+\contentsline {section}{\numberline {2}Trabajo Realizado}{6}{section.2}
+\contentsline {subsection}{\numberline {2.1}Etapa 0}{6}{subsection.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}Algoritmo Mapa de Objetos versi\IeC {\'o}n \textit {Java}}{6}{subsubsection.2.1.1}
+\contentsline {subsection}{\numberline {2.2}Etapa 1: Migraci\IeC {\'o}n}{6}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Etapa 2: Refactoring}{8}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Etapa 3: FrontEnd}{9}{subsection.2.4}
+\contentsline {section}{\numberline {3}Conclusiones}{10}{section.3}
+\contentsline {section}{\numberline {4}Aqu\IeC {\'\i } un nuevo tema}{11}{section.4}
+\contentsline {subsection}{\numberline {4.1}Haciendo informes como un profesional}{11}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Otros p\IeC {\'a}rrafos m\IeC {\'a}s normales}{12}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Ejemplos de inserci\IeC {\'o}n de c\IeC {\'o}digo fuente}{13}{subsection.4.3}
+\contentsline {section}{\numberline {5}M\IeC {\'a}s ejemplos}{13}{section.5}
+\contentsline {subsection}{\numberline {5.1}Listas y Enumeraciones}{13}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Otros}{14}{subsection.5.2}
+\contentsline {section}{Anexo \numberline {A}C\IeC {\'a}lculos realizados}{15}{Anexo.1.Alph1}
+\contentsline {section}{Anexo \numberline {B}M\IeC {\'a}s c\IeC {\'a}lculos}{16}{Anexo.1.Alph2}
+\contentsline {section}{Referencias}{17}{section*.12}

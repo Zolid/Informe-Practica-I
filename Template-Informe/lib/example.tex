@@ -19,13 +19,14 @@
 	% Las sub-secciones se inician con \subsection, si se quiere una sub-sección sin "número" se pueden usar las funciones \subsectionanum (nuevo subtítulo sin numeración) o la función \subsectionanumnoi para crear el mismo subtítulo sin numerar y sin aparecer en el índice
 	\subsection{Lugar de Trabajo}
 		
-		\newpar{La prática profesional se realizó en el Web Intelligence Centre \cite{ref1}, en adelante WIC, es un centro de investigación depediente de la Facultad de Ciencias Físicas y Matemáticas de la Universidad de Chile, cuya misión es desarrollar investigación en el campo de Tecnologías de Información creando soluciones para abordar problemas complejos de ingeniería utilizando herramientas basadas en la Web de las Cosas. Se encuentra ubicado en Beaucheff \#851, Santiago, Chile. El trabajo se realizó de forma presencial en las instalaciones del centro, entre el 3 al 31 de Enero de 2017.}
+		\newpar{La prática profesional se realizó en el Web Intelligence Centre \cite{ref1}, en adelante WIC, es un centro de investigación dependiente de la Facultad de Ciencias Físicas y Matemáticas de la Universidad de Chile, dirigido por el académico Juan Velásquez del Departamento de Ingeniería Industrial de la Universidad de Chile. Su misión es desarrollar investigación en el campo de Tecnologías de Información creando soluciones para abordar problemas complejos de ingeniería utilizando herramientas basadas en la Web de las Cosas. Se encuentra ubicado en Beaucheff \#851, Santiago, Chile. El trabajo se realizó de forma presencial en las instalaciones del centro, entre el 3 al 31 de Enero de 2017.}
 		
 
 	\subsection{Grupo de trabajo}
 	
-		\newpar{En el WIC trabajan investigadores de tiempo completo, desarrolladores con experiencia, profesionales del área de la salud debido a que muchos de sus proyectos son en conjunto con la Facultad de Medicina, alumnos de pregrado que pueden ser memorista sobre algún tema de investigación o trabajadores part-time y estudiantes de magister del Departamento de Ingeniería Industrial. En particular en la oficina donde se realizó el trabajo era usada regularmente por 6 personas, de los cuales había un investigador, dos memorista, un ingeniero de proyectos y otro practicante que también trabajó en el \textit{Proyecto AKORI}, que es dirigido por el Ingeniero de Proyecto, Felipe Vera, quien fue el tutor del practicante (pero no se encontraba en la misma oficina).}
-\newpage
+		\newpar{En el WIC trabajan investigadores de tiempo completo, desarrolladores con experiencia, profesionales del área de la salud debido a que muchos de sus proyectos son en conjunto con la Facultad de Medicina, alumnos de pregrado que pueden ser memorista sobre algún tema de investigación o trabajadores part-time y estudiantes de magister del Departamento de Ingeniería Industrial. En particular la oficina donde se realizó el trabajo era usada regularmente por 6 personas, de los cuales había un investigador, dos memoristas, un ingeniero de proyectos y otro practicante que también trabajó en el \textit{Proyecto AKORI}. El \textit{Proyecto AKORI} es dirigido por el Ingeniero de Proyecto, Felipe Vera, quien fue el tutor del practicante 
+(pero no se encontraba en la misma oficina).}
+
 \subsection{Equipos y Software}	
 	
 		\subsubsection{Software}
@@ -247,7 +248,7 @@
         explicación más detallada del código de la subsección \ref{subseccion141} 
         (ver código \ref{version-java})}
         
-	\subsection{Etapa de migración}
+	\subsection{Etapa 1: Migración}
 	
 	\newpar{Una vez encontradas las clases involucradas y aprendido el funcionamiento de 
 	\textit{Django}, se procedió a migrar el algoritmo del mapa de objetos ya existente
@@ -301,8 +302,79 @@ for b in body:
 		
 	\newpar{El resultado era un mapa igual al de la figura ?. Algunas partes del código han
 	sido omitidas debido a que no formaban parte escencial de la explicación.}
+\newpage
+\subsection{Etapa 2: Refactoring}
 
-% NUEVA SECCIÓ
+	\newpar{Con la migración del código \textit{JAVA} a \textit{Python} fue posible desarrollar
+	un mapa más completo donde se diferenciarán los objetos más vistos a lo menos vistos. Como ya
+	se había mencionado en secciones previas; los datos que mostraban las posiciones de los 
+	objetos web más vistos dentro del sitio de estudio, provenían de la imagen (del sitio
+	web) que generaba el mapa de fijación (ver figura ?). Para trabajar con estos datos, se 
+	procedía a transformar la imagen a su representación matricial, en cual donde antes habían 
+	existido colores más intensos ahora estaba la concentración de números más altos. Sin embargo, 
+	estos valores eran entre 0 a 1, para tener un mayor acercamiento a la escala de colores RGB
+	se ponderaba la matriz para obtener valores de 0 a 255, con la función definida en el siguiente
+	código:}
+	\begin{lstlisting}[style=Python, caption={Función que pondera la matrix a valores enteros.}]
+def multiplier_matrix(matrix):
+	matrix = matrix.T * (255.0 / max(matrix))
+	return matrix
+\end{lstlisting}
+	
+	\newpar{Para obtener la representación matricial del mapa de fijación ocular se empleó de la 
+	biblioteca de \textit{Python}, \textit{matplotlib} cite ?, (usada para la generación de 
+	gráficos) con el método \textit{imread} que retornaba la matriz de la imagen que recibe como
+	entrada.}
+\begin{lstlisting}[style=Python, caption={Forma matricial de una imagen.}]
+matrix = matplotlib.image.imread(screen_path)
+\end{lstlisting}
+
+\newpar{Sin embargo, la concentración de valores en la matriz producida por el mapa de fijación
+	no era regular, en el sentido que los objetos en el mapa de objetos claves eran representados 
+	rectangulos y en dicha matriz la distribución de concentración era irregular, por lo tanto se 
+	creó otra matriz, llamada matriz de opacidad, para rellenar sus valores en función
+	de la concentración de la matriz generada por el mapa de fijación y con forma de rectangulo 
+	para así respetar la forma de cada objeto web dentro del sitio web. Para ello se utilizó la 
+	función \textit{buildMatrix} que rellenaba una matriz de ceros con cierto valor de opacidad
+	en las posiciones de cada objeto web, el código de la función es el siguiente: }
+\begin{lstlisting}[style=Python, caption={Función de construcción para la matriz de opacidad.}]
+def buildMatrix(matrix, x1, y1, x2, y2, alpha):
+	i = x1
+	while (i != x2):
+		j = y1
+		if alpha < matrix[i, j]:
+			break
+		while (j != y2):
+			if alpha < matrix[i, j]:
+				break
+			matrix[i, j] = alpha
+			j += 1
+		i += 1
+	return matrix
+\end{lstlisting}
+\newpar{Como la matriz de opacidad construida elaboraba un mapa de colores en función de las 
+posiciones de objetos web (ver figura ?), para ello se gráficaba la matriz gracias a la función 
+de la biblioteca \textit{matplotlib}, para finalmente efectuar la fusión de la imagen en escala 
+de colores y el \textit{screenshot} del sitio web con cierta opacidad, creando una imagen 
+como la de la figura ?, dicho procedimiento se llevaba a cabo con la función \textit{objmapColor}.}
+\begin{lstlisting}[style=Python, caption={Fusión de imágenes}]
+def objmapColor(screenshot, path, matrix, color_string):
+    '''Funcion que retorna la image final para el mapa de objeto realizando un blend entre el screenshot y el mapa de colores.
+    parametro screenshot: imagen de screenshot tomando de la pagina.
+    parametro path: path donde se almacena el screenshot tomado de la pagina web.
+    parametro matrix: matriz de opacidad.
+    parametro: color que se quiere para el mapa de color.
+    '''
+    mpimg.imsave(path, matrix, cmap = color_string)
+    img = Image.open(path)
+    output = Image.blend(screenshot, img, 0.5)
+    return output
+\end{lstlisting}
+\newpar{El resto del algoritmo de construcción del mapa de objetos es análogo a los explicado
+en la subsección anterior por lo que la omitimos.}
+
+\subsection{Etapa 3: FrontEnd}
+zjkajjas
 \newpage
 \section{Conclusiones}
  	\newpar{Los resultados del trabajo presentado en este informe fueron considerados por el tutor
