@@ -244,9 +244,56 @@
         \subsubsection{Algoritmo Mapa de Objetos versión \textit{Java}}
         
         \newpar{A pesar de que existía un mapa de objetos en la versión 1 del proyecto, el algoritmo
-        no contaba con una clase propia dentro del código de la aplicación. Realizando una 	
-        explicación más detallada del código de la subsección \ref{subseccion141} 
-        (ver código \ref{version-java})}
+        no contaba con una clase propia dentro del código de la aplicación. A continuación 	
+        se realizará una explicación más detallada del código de la subsección \ref{subseccion141} 
+        (ver código \ref{version-java}) siguiendo paso a paso su ejecución:}
+        
+        \begin{enumerate}
+         \item Para obtener todos los elementos del \textit{DOM} se empleaba una consulta al 
+         \textit{WebDriver Object} cite ? un objeto perteneciente a la biblioteca \textit{Selenium} 	
+         para
+         \textit{JAVA} encargado de ejecutar llamadas directas al navegador y conseguir información
+         (\textit{Web Scrapping} cite ?) del sitio en cual se estaba navegando, luego usando el 
+         método \textit{findElements} se llevaba cabo la consulta qu era conseguir todos los 
+         \textit{WebObject} que poseían un \textit{TagName}, cuyo nombre de etiqueta 
+         (\textit{TagName}) era referido a las etiquetas de \textit{HTML}, donde dichos elementos
+         eran guardados en una variable query, donde los objetos son almanenados en un 
+         \textit{ArrayList Object} que corresponde al objeto que representa las listas en 
+         \textit{JAVA}.
+			\begin{lstlisting}[style=Java, caption={Obtención \textit{WebObjects}.}]
+           	query = driver.findElements(By.tagName(temp.tagName()));
+\end{lstlisting}
+		\item Luego, para dibujar el mapa de objetos se ingresaba a un bucle manejado por un ciclo
+		\textit{for} en el cual se recorría la lista de \textit{Web Objects}, y utilizando los 
+		objetos \textit{Point} y \textit{Dimesion} ambos provenientes de la biblioteca de 
+		\textit{Selenium}, el cual dichos objetos guardaban las posición de objeto web 
+		en la representación matricial del \textit{screenshot} del sitio de estudio. Dichas
+		posiciones servían para instanciar un objeto \textit{Rectangle} de la clase estándar
+		de \textit{JAVA}, y finalmante con un objeto \textit{Draw} eran dibujados dentro del 
+		\textit{screenshot} tomado. En el siguiente código puese apreciarse una versión simplificada
+		de dicho algoritmo.
+					\begin{lstlisting}[style=Java, caption={Algoritmo mapa de objetos simplificado.}]
+for (WebElement temp1 : query) {
+	Point po = temp1.getLocation();
+    Dimension d = temp1.getSize();
+    graph.draw(new Rectangle(po.x, po.y, d.width, d.height));
+}
+\end{lstlisting}
+		\item Algunos puntos que fueron omitidos del algoritmo anterior es que podían existir 
+		errores en su ejecución que provenían el sitio web que se estaba analizando que era 
+		neutralizando con sentencias \textit{try-catch} aislando los errores más frecuentes.
+		\item El último punto importante a mencionar existian algunos objetos web cuyo tamaño 
+		escapaba las dimensiones de la pantalla donde se visualizaba el sitio web, dichos objetos
+		no fueron considerados dentro del mapa de objetos debido a que no eran importantes 
+		para el análisis de determinar los objetos web más visto por el usuario. Estos 
+		se aislaban de acuerdo a sí las posiciones del web object escapaban a una coordenada
+		negativa. Una sentencía \textit{if} se encargaba de lo indicado. 
+		\begin{lstlisting}[style=Java, caption={Obtención \textit{WebObjects}.}]
+if (d.width <= 0 || d.height <= 0 || po.x < 0 || po.y < 0) {
+	continue;
+}
+\end{lstlisting}
+        \end{enumerate}
         
 	\subsection{Etapa 1: Migración}
 	
@@ -304,7 +351,34 @@ for b in body:
 	sido omitidas debido a que no formaban parte escencial de la explicación.}
 \newpage
 \subsection{Etapa 2: Refactoring}
-
+	\subsubsection{Diseño}
+	\newpar{Antes de detallar el funcionamiento del código realizado se explica el patrón de 
+	diseño utilizado. Como se dijo en secciones pasado el framework \textit{Django} sigue el patrón
+	\textit{Modelo Vista Controlador} (MVC) cite ?. \\ \\ 
+	El MVC consta de las siguientes partes: \\
+	\begin{enumerate}
+		\item \textbf{Modelo}: Su responsabilidad es el manejar la representación de la información 
+		con la cual se está trabajando, por lo tanto le corresponde interactuar y gestionar dicha 
+		información.
+		\item \textbf{Controlador}: Es el intermediario entre la vista y el modelo, le corresponde 
+		responder a eventos y enviar peticiones al modelo. Sin embargo, para el caso \textit{Django} 
+		recibe el nombre de Vistas, \textit{Views} en inglés.
+		\item \textbf{Vista}: Muestra la información de forma gráfica al usuario, en un formato 
+		apropiado. La información mostrada corresponde a la información que provee el modelo. En
+		el caso de \textit{Django} reciben el nombre de templates.
+	\end{enumerate}
+	Aplicando este modelo a las responsabilidades identificadas en la programación del mapa de 
+	objetos se obtuvo lo que cada parte del MVC debe realizar.
+	\begin{enumerate}[label=\alph*) ,font=\bfseries] % Fuente en negrita
+				\item El \textbf{Modelo} debe encargarse de la extracción de datos, pues el modelo 
+				el que debe encargarse de interactuar y gestionar la información.
+				\item La \textbf{Vista}, o los \textit{templates}, deben en encargarse de desplegar
+				el mapa de objetos cuando se inserta una url de un sitio web a análizar. 
+				\item El \textbf{Controlador}, o las \textit{Views}, que se encargan de toda la 
+				lógica de programación del mapa de objetos claves.
+	\end{enumerate}
+	}
+	\subsubsection{Funcionamiento}
 	\newpar{Con la migración del código \textit{JAVA} a \textit{Python} fue posible desarrollar
 	un mapa más completo donde se diferenciarán los objetos más vistos a lo menos vistos. Como ya
 	se había mencionado en secciones previas; los datos que mostraban las posiciones de los 
@@ -370,11 +444,34 @@ def objmapColor(screenshot, path, matrix, color_string):
     output = Image.blend(screenshot, img, 0.5)
     return output
 \end{lstlisting}
-\newpar{El resto del algoritmo de construcción del mapa de objetos es análogo a los explicado
-en la subsección anterior por lo que la omitimos.}
+\newpar{El resto del algoritmo de construcción del mapa de objetos es análogo a los explicado en la subsección anterior por lo que la omitimos. Es importante descatar que el funcionamiento explicado corresponde a los controladores de la aplicación que luego fueron añadidos al archivo \textit{Views} del proyecto, dejando para la subsección siguiente la implementación de las Vistas, es decir el despliegue del mapa de objetos
+dentro de la aplicación web.}
 
 \subsection{Etapa 3: FrontEnd}
-zjkajjas
+\newpar{Una vez implementada la lógica del algoritmo, la etapa final fue 
+trasladar el algoritmo a la aplicación y visualizar el mapa de objetos dentro del servidor. Como
+bien se ha dicho el framework \textit{Django} separa las responsabilidades siguiendo el patrón de
+diseño MVC, en la subsección anterior se explicó la lógica detrás del mapa de objetos que dentro 
+de la aplicación corresponde al \textit{Controlador} (las \textit{Views} en \textit{Django}), la 
+parte del \textit{Modelo} era proporcionada por los datos del mapa de fijación, por ende, esta etapa 
+se centra en el desarrollo de las \textit{Vistas}, que en \textit{Django} reciben el nombres de 
+\textit{Templates}. \\ Como el practicante debió agregar nueva funcionalidad a una aplicación 
+existente mucha parte del código que producía la inferfaz de usuario ya estaba hecho, por lo que 
+esta parte del trabajo se restringió en añadir la interfaz de usuario del mapa de objetos. }
+
+\newpar{El desarrollo del despliegue del mapa de objetos se divide en dos paso, el primero
+son las llamadas \textit{AJAX} que se encargan de procesar la información obtenida para generar
+el mapa de objetos sin recargar la página por completo y el segundo, la creación del contenedor
+que recibirá el mapa de objetos que es mostrado al usuario. Para simplificar el manejo del código a las llamadas \textit{AJAX} se utilizó la biblioteca \textit{JQuery} perteneciente a 
+\textit{JavaScript}. A continuación se detallan los pasos mencionados dentro de la ejecución del
+código:}
+\begin{enumerate}[label=\alph*) ,font=\bfseries] 
+\item \textbf{Llamadas \textit{AJAX}}: Se creó una función \textit{JavaScript} nombrada 
+\textit{objmap}
+\end{enumerate}
+
+
+
 \newpage
 \section{Conclusiones}
  	\newpar{Los resultados del trabajo presentado en este informe fueron considerados por el tutor
