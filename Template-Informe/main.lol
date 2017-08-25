@@ -14,5 +14,3 @@
 \contentsline {lstlisting}{\numberline {14}Obtenci\IeC {\'o}n \textit {WebObjects}.}{12}{lstlisting.14}
 \contentsline {lstlisting}{\numberline {15}Obtenci\IeC {\'o}n \textit {WebObjects}.}{13}{lstlisting.15}
 \contentsline {lstlisting}{\numberline {16}Obtenci\IeC {\'o}n \textit {WebObjects}.}{13}{lstlisting.16}
-\contentsline {lstlisting}{\numberline {17}Ejemplo en Python.}{17}{lstlisting.17}
-\contentsline {lstlisting}{\numberline {18}Ejemplo en Matlab.}{17}{lstlisting.18}
