@@ -467,9 +467,94 @@ que recibirá el mapa de objetos que es mostrado al usuario. Para simplificar el
 código:}
 \begin{enumerate}[label=\alph*) ,font=\bfseries] 
 \item \textbf{Llamadas \textit{AJAX}}: Se creó una función \textit{JavaScript} nombrada 
-\textit{objmap}
-\end{enumerate}
+\textit{objmap} encargada de ejecutar la llamadas \textit{AJAX} siguiendo la sintaxis de 
+\textit{JQuery}, dicha función realizaba una solicitud GET del protocolo HTTP para conseguir
+la información del mapa de fijación, con un \textit{timeout} 120000 milisegundos antes de efectuar
+la petición una vez obtenidos los datos se ejecutaba la función de la variable \textit{success} 
+propia de \textit{JQuery}. La sintaxis \textit{\$.ajax\{...\}} se utiliza para ejecutar llamadas
+\textit{AJAX}, por lo tanto la funcionalidad del objeto \textit{XMLHttpRequest} (objeto usado para 
+interacción entre servidor y cliente mediante las solicitudes y respuestas genereadas entre ellos) 
+quedaba encapsulada por la biblioteca \textit{JQuery}. En el siguiente código se muestra lo descrito.
+\newpage
+\begin{lstlisting}[style=Java, caption={Obtención \textit{WebObjects}.}]
+function objmap(sitio){
+$.ajax(
+{
+type: 'GET',
+timeout:120000,
+url:'https://{{ request.META.HTTP_HOST }}/objmap/',
+data:{url: sitio},
+success: function(data){...}
+}
+\end{lstlisting}
+\item \textbf{Visualización}: Una vez obtenidos los datos, se ejecutaba la función dentro de la variable \textit{success}, donde la variable \textit{urlobj} guardaba los datos y mientras se 
+procesaba la información se oculta el \textit{div} contenedor del mapa de objetos (cuyo nombre
+dentro \textit{DOM} es \textit{objemapdiv}). Luego se elemento \textit{HTML} para carga la imagen
+(cuya etiqueta es \textit{img} y se añade al \textit{div} contenedor) para ser visualizado por un 
+boton cuando estaba totalmente desplegado el mapa de objetos.
+\begin{lstlisting}[style=Java, caption={Obtención \textit{WebObjects}.}]
 
+success: function(data){
+urlobj = data;
+$("#objmapdiv").hide();
+  
+ var imgdata = '<a id="objmaplink" href="'+urlobj+'_r.png" rel="prettyPhoto"><img src="'+urlobj+'_r.png" alt="objmap"></a>';
+$("#objmapdiv").html(imgdata);
+$("#objmaplink").prettyPhoto();
+$("#objmapdiv").slideDown(800);
+totalTime = (new Date().getTime()-ajaxTime)/1000;
+ totalTime = totalTime.toFixed(2);
+ $("#objmaptime").html('¡Se demoró '+totalTime+' segundos!' );
+ $(".clickMe").show()
+},
+error: function(x, t, m) {
+}
+})
+\end{lstlisting}
+\item \textbf{Funcionalidad Cambio de Colores}: En secciones previas se dijo que para la versión 
+final de mapa colores existen cuatro tonalidades de colores rojo, azul naranjo y verde. Para lograr
+cambiar el tipo de mapa dinámicamente se programó una función \textit{JavaScript} que se llamaba al presionar boton del color correspodiente. Esta función recibía como argumento la ruta de la imagen
+a modificar, y creaba un etiqueta \textit{HTML} de inserción de imagen, para luego se redireccionada
+al \textit{div} contenedor del mapa de objetos con al ayuda del método \textit{.sliveDown\(\)} de la
+libería \textit{JQuery}. Dicha función recibía la firma \textit{objmap_color\(color\)}, donde su 
+argumento correspondía a la ruta de archivo con el mapa de objeto ya creado en el color 
+correspondiente. El siguiente código muestra la funcionalidad descrita.
+\newpage
+\begin{lstlisting}[style=Java, caption={Obtención \textit{WebObjects}.}]
+function objmap_color(color) {
+var aux = color;      
+var imgdata = '<a id="objmaplink" href="'+urlobj.concat(aux)+'" rel="prettyPhoto"><img src="'+urlobj.concat(aux)+'" alt="objmap"></a>';
+$("#objmapdiv").html(imgdata);
+$("#objmaplink").prettyPhoto();
+$("#objmapdiv").slideDown(800);
+}
+\end{lstlisting}
+\item \textbf{Código HTML}: El último paso consitió en agregar al templates la etiquetas 
+\textit{HTML} necesarias para desplegar el mapa de objetos, las cuales fueron el \textit{div}
+contenedor, los 4 botones que modificaban la versión de color del mapa de objetos y una 
+etiqueta que agregaba un pequeño parrafo donde se mostraba el tiempo tardaba en cargar el mapa.
+Esto se aprecia en el siguiente código \textit{HTML}.
+\begin{lstlisting}[style=Java, caption={Obtención \textit{WebObjects}.}]
+<div class="span4">
+  <div id="objmapdiv" class="mask2">
+  <div class="loadercontainer"><div class="loader"></div></div>
+</div>
+<div id="objdiv" class="inside">
+  <hgroup id="group" style="text-align:center;">
+    <h2 class="titleservice">Mapa de Objetos Claves</h2>
+     <p id="objmaptime" class="subtitle"></p>
+     <input class="clickMe" type="button" value="Rojo" onclick="objmap_color('_r.png');"/>
+     <input class="clickMe" type="button" value="Azul" onclick="objmap_color('_b.png');" />
+     <input class="clickMe" type="button" value="Verde" onclick="objmap_color('_g.png');"/>
+     <input class="clickMe" type="button" value="Naranjo" onclick="objmap_color('_o.png');"/> 
+  </hgroup>
+</div>                        
+</div>
+\end{lstlisting}
+\end{enumerate}
+\newpar{Sí la última parte es bastante simple está fue la forma indicada por el tutor de práctica,
+ya que se estaba trabajando en una nueva interfaz a toda a la aplicación que no formaba parte del
+trabajo pedido al prácticante.}
 
 
 \newpage

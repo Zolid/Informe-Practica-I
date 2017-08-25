@@ -10,5 +10,9 @@
 \contentsline {lstlisting}{\numberline {10}Forma matricial de una imagen.}{10}{lstlisting.10}
 \contentsline {lstlisting}{\numberline {11}Funci\IeC {\'o}n de construcci\IeC {\'o}n para la matriz de opacidad.}{10}{lstlisting.11}
 \contentsline {lstlisting}{\numberline {12}Fusi\IeC {\'o}n de im\IeC {\'a}genes}{10}{lstlisting.12}
-\contentsline {lstlisting}{\numberline {13}Ejemplo en Python.}{15}{lstlisting.13}
-\contentsline {lstlisting}{\numberline {14}Ejemplo en Matlab.}{15}{lstlisting.14}
+\contentsline {lstlisting}{\numberline {13}Obtenci\IeC {\'o}n \textit {WebObjects}.}{12}{lstlisting.13}
+\contentsline {lstlisting}{\numberline {14}Obtenci\IeC {\'o}n \textit {WebObjects}.}{12}{lstlisting.14}
+\contentsline {lstlisting}{\numberline {15}Obtenci\IeC {\'o}n \textit {WebObjects}.}{13}{lstlisting.15}
+\contentsline {lstlisting}{\numberline {16}Obtenci\IeC {\'o}n \textit {WebObjects}.}{13}{lstlisting.16}
+\contentsline {lstlisting}{\numberline {17}Ejemplo en Python.}{17}{lstlisting.17}
+\contentsline {lstlisting}{\numberline {18}Ejemplo en Matlab.}{17}{lstlisting.18}
