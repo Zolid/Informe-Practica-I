@@ -10,7 +10,7 @@
 \contentsline {lstlisting}{\numberline {10}Forma matricial de una imagen.}{10}{lstlisting.10}
 \contentsline {lstlisting}{\numberline {11}Funci\IeC {\'o}n de construcci\IeC {\'o}n para la matriz de opacidad.}{10}{lstlisting.11}
 \contentsline {lstlisting}{\numberline {12}Fusi\IeC {\'o}n de im\IeC {\'a}genes}{10}{lstlisting.12}
-\contentsline {lstlisting}{\numberline {13}Obtenci\IeC {\'o}n \textit {WebObjects}.}{12}{lstlisting.13}
-\contentsline {lstlisting}{\numberline {14}Obtenci\IeC {\'o}n \textit {WebObjects}.}{12}{lstlisting.14}
-\contentsline {lstlisting}{\numberline {15}Obtenci\IeC {\'o}n \textit {WebObjects}.}{13}{lstlisting.15}
-\contentsline {lstlisting}{\numberline {16}Obtenci\IeC {\'o}n \textit {WebObjects}.}{13}{lstlisting.16}
+\contentsline {lstlisting}{\numberline {13}Llamada \textit {AJAX} para despliegue del Mapa de Objetos.}{12}{lstlisting.13}
+\contentsline {lstlisting}{\numberline {14}Funci\IeC {\'o}n de despligue del Mapa de Objetos.}{12}{lstlisting.14}
+\contentsline {lstlisting}{\numberline {15}Funci\IeC {\'o}n que genera el cambio de colors en el Mapa de Obejtos.}{13}{lstlisting.15}
+\contentsline {lstlisting}{\numberline {16}Contenido \textit {HTML} donde se aloja el Mapa de Objetos.}{13}{lstlisting.16}

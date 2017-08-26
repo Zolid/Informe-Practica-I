@@ -19,18 +19,18 @@
 	% Las sub-secciones se inician con \subsection, si se quiere una sub-sección sin "número" se pueden usar las funciones \subsectionanum (nuevo subtítulo sin numeración) o la función \subsectionanumnoi para crear el mismo subtítulo sin numerar y sin aparecer en el índice
 	\subsection{Lugar de Trabajo}
 		
-		\newpar{La prática profesional se realizó en el Web Intelligence Centre \cite{ref1}, en adelante WIC, es un centro de investigación dependiente de la Facultad de Ciencias Físicas y Matemáticas de la Universidad de Chile, dirigido por el académico Juan Velásquez del Departamento de Ingeniería Industrial de la Universidad de Chile. Su misión es desarrollar investigación en el campo de Tecnologías de Información creando soluciones para abordar problemas complejos de ingeniería utilizando herramientas basadas en la Web de las Cosas. Se encuentra ubicado en Beaucheff \#851, Santiago, Chile. El trabajo se realizó de forma presencial en las instalaciones del centro, entre el 3 al 31 de Enero de 2017.}
+		\newpar{La prática profesional se realizó en el Web Intelligence Centre \cite{ref1}, en adelante WIC, es un centro de investigación dependiente de la Facultad de Ciencias Físicas y Matemáticas de la Universidad de Chile, dirigido por el académico Juan Velásquez del Departamento de Ingeniería Industrial de la Universidad de Chile. Su misión es desarrollar investigación en el campo de Tecnologías de Información creando soluciones para abordar problemas complejos de ingeniería utilizando herramientas basadas en la Web de las Cosas. Se encuentra ubicado en Beaucheff \#851, Santiago, Chile. El trabajo se realizó de forma presencial en las instalaciones del centro, entre el 3 al 31 de Enero de 2017. En figura \ref{organigrama} es posible apreciar el organigrama del centro.}
 		
 
 	\subsection{Grupo de trabajo}
 	
-		\newpar{En el WIC trabajan investigadores de tiempo completo, desarrolladores con experiencia, profesionales del área de la salud debido a que muchos de sus proyectos son en conjunto con la Facultad de Medicina, alumnos de pregrado que pueden ser memorista sobre algún tema de investigación o trabajadores part-time y estudiantes de magister del Departamento de Ingeniería Industrial. En particular la oficina donde se realizó el trabajo era usada regularmente por 6 personas, de los cuales había un investigador, dos memoristas, un ingeniero de proyectos y otro practicante que también trabajó en el \textit{Proyecto AKORI}. El \textit{Proyecto AKORI} es dirigido por el Ingeniero de Proyecto, Felipe Vera, quien fue el tutor del practicante 
+		\newpar{En el WIC trabajan investigadores de tiempo completo, desarrolladores con experiencia, profesionales del área de la salud debido a que muchos de sus proyectos son en conjunto con la Facultad de Medicina, alumnos de pregrado que pueden ser memorista sobre algún tema de investigación o trabajadores part-time y estudiantes de magister del Departamento de Ingeniería Industrial. En particular la oficina donde se realizó el trabajo era usada regularmente por 6 personas, de los cuales había un investigador, dos memoristas, un ingeniero de proyectos y otro practicante que también trabajó en el \textit{Proyecto AKORI}. El \textit{Proyecto AKORI} \cite{ref2} es dirigido por el Ingeniero de Proyecto, Felipe Vera, quien fue el tutor del practicante 
 (pero no se encontraba en la misma oficina).}
 
 \subsection{Equipos y Software}	
 	
 		\subsubsection{Software}
-			\newpar{El software utilizado para desarrollar el trabajo fue \textit{Python} como lenguaje de programación (a través del IDLE Pycharm proporcionado por JetBrains \cite{ref2}), el framework para aplicaciones Web Python, \textit{Django}, \textit{Javascript} y \textit{AJAX} para la creación de páginas web dinámicas, \textit{Git} para el manejo de control de versiones, el navegador sin interfaz gráfico (conocido como headless browser), PhantomJS, el entorno de pruebas software para aplicaciones web, Selenium, dos bibliotecas de Python, una para edición de imágenes, Python Imaging Library, y otra para la generación de un mapa de colores, Matplotlib, y el sistema operativo Ubuntu. Además cabe descatar del aplicación del \textit{Proyecto AKORI} en la cual se trabajo. A continuación se presenta una breve descripción de los elementos más relevantes para el desarrollo y compresión del trabajo realizado:}
+			\newpar{El software utilizado para desarrollar el trabajo fue \textit{Python} \cite{ref3} como lenguaje de programación (a través del IDLE Pycharm proporcionado por JetBrains \cite{ref4}), el framework para aplicaciones Web Python, \textit{Django} \cite{ref5}, \textit{JavaScript} y \textit{AJAX} para la creación de páginas web dinámicas, \textit{Git} para el manejo de control de versiones, el navegador sin interfaz gráfico (conocido como headless browser), PhantomJS, el entorno de pruebas software para aplicaciones web, Selenium \cite{ref6}, dos bibliotecas de Python, una para edición de imágenes, Python Imaging Library, y otra para la generación de un mapa de colores, Matplotlib, y el sistema operativo Ubuntu. Además cabe descatar del aplicación del \textit{Proyecto AKORI} \cite{ref2} en la cual se trabajo. A continuación se presenta una breve descripción de los elementos más relevantes para el desarrollo y compresión del trabajo realizado:}
 			\begin{enumerate}
 				\item \textbf{Python}: Es un lenguaje de programación interpretado cuya filosofía 
 				hace hincapié en una sintaxis que favorezca un código legible. Se trata de un 
@@ -39,7 +39,7 @@
 				del trabajo Python sirvió como lenguaje de programación por el lado del servidor 
 				para la aplicación web que actualmente funciona como prototipo al \textit{Proyecto AKORI}. 
 				\item \textbf{Django}: Es un framework de desarrollo web de código abierto (\textit{open source}), escrito en \textit{Python} que respeta el patrón de diseño conocido como 
-				Modelo-Vista-Controlador (MCV), que en pocas palabras separa los componentes más 
+				Modelo-Vista-Controlador (MCV) \cite{ref7}, que en pocas palabras separa los componentes más 
 				importantes de una aplicación es tres grandes grupos, el modelo donde descansan los
 				datos de la aplicación (Base de Datos), la vista que se encarga de todo el aspecto 
 				visual de una aplicación, y los controladores que ejecutan toda la lógica de
@@ -47,32 +47,35 @@
 				En el caso de \textit{Django} tiene la perculiaridad que las vistas reciben el 
 				nombre templates (encargados del \textit{fontend} de la aplicación) y los 
 				controladores se llaman vistas (Views en inglés y encargadas del \textit{backend}). 	
-				Para el trabajo realizado fue necesario tomar la aplicación desarrollada, anadir
+				Para el trabajo realizado fue necesario tomar la aplicación desarrollada, añadir
 				cambios en los templates y agregar algunas funciones a las vistas para controlar 
-				la lógica de la mapa de objetos que en las próximas secciones serán explicadas en 
+				la lógica del mapa de objetos que en las próximas secciones serán explicadas en 
 				detalle.
-				\item \textbf{Javascript} y \textbf{AJAX}: Es un lenguaje de programación que 
+				\item \textbf{JavaScript} y \textbf{AJAX}: Es un lenguaje de programación que 
 				es utilizado para la creación de páginas web de dinámicas por el lado del cliente
 				en una aplicación web. \textit{AJAX} es una extensión a la funcionalidad de 
-				\textit{Javascript} que hace llamadas asincronas al servidor web obteniendo 
+				\textit{Javascript} que hace llamadas asíncronas al servidor web obteniendo 
 				información sin recargar las página por completo. Dentro del trabajo de prática
 				fueron utilizados para obtener el input de datos para el despliegue del mapa de 
 				objetos sin recargar toda la aplicación en la consulta. 
 				\item \textbf{PhantomJS}: Es un navegador sin interfaz gráfica que sirve para 
 				realizar pruebas a una aplicación que se encuentra en fase de desarrollo. Fue 
-				utilizado para realizar web scrapping, término que describe la recolección de 
+				utilizado para realizar web scraping \cite{ref8}, término que describe la recolección de 
 				información a través de la Web usando programas automatizados.
 				\item \textbf{Selenium}: Es un entorno de pruebas de software para aplicaciones 
 				basadas en la web, con bibliotecas existentes para muchos lenguajes de programación
-				como \textit{Python} y \textit{JAVA}.Se usó para realizar el web scrapping 
-				junto a PhantomJs sobre los distintas sitios web que fueron testeados.
+				como \textit{Python} y \textit{JAVA}. Se usó para realizar el web scrapping 
+				junto a \textit{PhantomJS} sobre los distintas sitios web que fueron testeados.
 			\end{enumerate}
 	\subsubsection{\textit{Proyecto AKORI}}
 	
 		\newpar{Para contextualizar de mayor forma el trabajo de práctica realizado a continuación 
-		se explicará brevemente que es el \textit{Proyeto AKORI} y cuál es su meta a seguir. \\ 
-		Como meta general es desarrollar una plataforma virtual que permita extrapolar el 
-		comportamiento de navegación cuandos los usuarios ingresan a sitio web a partir de la 
+		se explicará brevemente que es el \textit{Proyeto AKORI} \cite{ref2} y cuál es su meta a seguir. \\ 
+		Antes de eso es necesario definir que son los objetos web \cite{ref9}, y que se entiende cuando se habla de ellos dentro del mapa de objetos, estos son definidos como la combinación grupal
+		o individual de elementos pertencientes al \textit{DOM} \cite{ref10}. En adelante cuando hablemos de 
+		objetos claves o simplemente de objetos nos referimos a los de la definición anterior. \\
+		El objetivo del \textit{proyecto AKORI} es desarrollar una plataforma virtual que permita extrapolar el 
+		comportamiento de navegación de los usuarios cuando ingresan a sitio web a partir de la 
 		extracción de patrones de datos analizados con técnicas de minería de datos, eye tracking, 
 		y encefalografía. Para lograr esto, el proyecto se divide en 5 grandes etapas que son las 
 		siguientes:
@@ -84,11 +87,11 @@
 				\item Prospectar y valorizar el mercado, como también la propiedad intelectual. Definir una estrategia para el empaquetamiento y transferencia de la tecnología.
 			\end{enumerate}
 			A pesar de que las investigaciones continúan, existe un propotipo de la aplicación web
-			con algunos módulos (mapas de estadísticos) en desarrollo y otros ya implementados. A continuación se escriben los modulos ya implementados, incluido el que desarrollo el practicante.
+			con algunos módulos (mapas esquemativos) en desarrollo y otros ya implementados. A continuación se escriben los módulos ya implementados, incluido el que desarrollo el practicante.
 				\begin{enumerate}
 					\item \textbf{Mapa de Fijación Ocular}: Contruye un mapa de calor con las zonas
 					más probables de fijación ocular en un sitio web a partir de una escala de 
-					colores los clientes pueden visualizar las zonas mas vistas en rojo, las menos 
+					colores. Los clientes pueden visualizar las zonas mas vistas en rojo, las menos 
 					vistas en azul y las que tiene ninguna probabilidad de ser vistas adquieren un 
 					color en escala de grises.
 					\item \textbf{Mapa de Dilatación Pupilar}: Construye un mapa calor siguiendo una
@@ -100,10 +103,12 @@
 					los objetos más importantes son coloreados con más oscuros que los menos vistos. 
 				\end{enumerate}
 			Además de los módulos explicados anteriormente, se está trabajando en tres mapas más 
-			que aún no han sido llevados a producción estos son, el índice de claridad, el mapa de 
+			que aún no han sido llevados a producción, estos son, el índice de claridad, el mapa de 
 			probabilidad de ticks, y el mapa de percepción; donde los primeros dos son complementos
-			a los ya implementados, y el último mostrará a donde es más probable que el usuario 
-			dirigirá la mirada los primeros tres segundos de ingresar al sitio web.				 
+			a los ya implementados, y el último mostrará donde es más probable que el usuario 
+			dirigirá la mirada los primeros tres segundos de ingresar al sitio web. \\ 
+			En las figuras \ref{akori}, \ref{reporte}, \ref{cargando}, \ref{mapas} puede apreciarse
+			la interfaz de la plataforma mientras se analiza la página de \textit{GOOGLE}. 				 
 			}
 		
 	\subsubsection{Equipo}
@@ -124,7 +129,7 @@
 		\subsubsection{Versión \textit{Java} con \textit{Servlet}} \label{subseccion141}
 			\newpar{En esta versión estaban implementados la mayoría de los modulos que fueron 
 			explicados en la sección anterior. Además una versión del mapa de objetos claves
-			que sin embargo, resaltaba todos elementos del sitio web (ver figura ?) y no filtraba
+			que sin embargo, resaltaba todos elementos del sitio web (ver figura \ref{mapadeobjetosv1}) y no filtraba
 			los elementos de mayor a menor interés. En el siguiente extracto del código se puede 
 			apreciar el algoritmo del mapa de objetos claves.}
 			
@@ -155,7 +160,7 @@
         }
 \end{lstlisting}
 	\newpar{A grandes rangos este código realizaba lo siguiente, almacenaba en la variable 
-	\textit{query} todos los objetos web provenientes del \textit{DOM} en un objeto de la clase
+	\textit{query} todos los objetos web provenientes del \textit{DOM} en una instancia de la clase
 	\textit{ArrayList}, para luego a entrar a un ciclo donde se dibujaba un rectángulo 
 	(que encerraba al objeto web) de acuerdo a la posición y las dimensiones de cada objeto web sobre una 
 	imagen tomada del sitio web que se estaba analizando. Como en está versión no existía una 
@@ -182,11 +187,12 @@
 		pocos milisegundos de ingresar a un sitio web. Como no existía una versión del mapa 
 		de objetos en la segunda versión de la aplicación, como primera instancia se agregó
 		una versión preliminar del mapa de objetos tal como existía en la primera versión 
-		(ver figura ?) que descataba todos los elementos del \textit{DOM} de un documento 
-		\textit{HTML}, luego se ideo un mapa de objetos que diferencia los elementos más 
+		(ver figura \ref{mapadeobjetosv1}) que descataba todos los elementos del \textit{DOM} de un documento 
+		\textit{HTML}, luego se ideó un mapa de objetos que diferencia los elementos más 
 		a menos vistos siguiendo un algoritmo de suma de matrices, donde la matriz era 
-		gráficada para generar una imagen que era fusionada a otra imagen tomanda del 
-		sitio web analizado bajando la opacidad en cada una. \\ \\
+		gráficada (ver figura \ref{escaladecolores}) para generar una imagen que era fusionada a otra imagen tomanda del 
+		sitio web analizado bajando la opacidad en cada una. En la figura \ref{mapadecolores} 
+		es posble visualizar lo descrito previamente. \\ \\
 		Para llevar a cabo el trabajo fue dividido por el practicante en tres etapas que se 
 		describen brevemente a continuación:
 			\begin{enumerate}
@@ -197,7 +203,7 @@
 				identificar aquellas clases y funciones claves involucradas a la partes a extender.
 				\item \textbf{Migración del código}: Como no existía un mapa de objetos en la nueva
 				en la segunda versión de la aplicación, se tomó parte del algoritmo existente en la 
-				versión del mapa de objetos, y realizar una migración del código \textit{JAVA} a 
+				versión del mapa de objetos, y se realizó una migración del código \textit{JAVA} a 
 				\textit{Python} obteniendo un mapa de objetos que encerraba los objetos web
 				tal como en la versión anterior.
 				\item \textbf{Refactoring}: Luego de agregar el mapa de objetos en su versión 
@@ -206,12 +212,12 @@
 				mencionadas) en forma de una matriz de observación para luego fusionarla con una 
 				matriz que representaba el sitio (es decir, se tomó una fotografía del sitio web
 				y se hizo una conversión a su representación matricial) en una escala de opacidad
-				tal como se aprecia en la figura ?.
-				\item \textbf{Etapa de FontEnd}: Una vez listos las funciones y algoritmos de 
+				tal como se aprecia en la figura \ref{mapadecolores}.
+				\item \textbf{Etapa de FrontEnd}: Una vez listos las funciones y algoritmos de 
 				las etapas anteriores, se pasó a la última etapa en la que utilizando 
-				\textit{Javascript} y funciones \textit{AJAX} implemento el mapa de objetos 
-				final dentro de la aplicación web, tal como se muestra en la figura ? y está 
-				disponible en su sitio oficial \cite{ref3}.}
+				\textit{Javascript} y funciones \textit{AJAX} se implementó el mapa de objetos 
+				final dentro de la aplicación web, tal como se muestra en la figura \ref{objmap} y 
+				está disponible en su sitio oficial \cite{ref3}.}
 			\end{enumerate}
 			
 \newpage
@@ -476,7 +482,7 @@ propia de \textit{JQuery}. La sintaxis \textit{\$.ajax\{...\}} se utiliza para e
 interacción entre servidor y cliente mediante las solicitudes y respuestas genereadas entre ellos) 
 quedaba encapsulada por la biblioteca \textit{JQuery}. En el siguiente código se muestra lo descrito.
 \newpage
-\begin{lstlisting}[style=Java, caption={Obtención \textit{WebObjects}.}]
+\begin{lstlisting}[style=Java, caption={Llamada \textit{AJAX} para despliegue del Mapa de Objetos.}]
 function objmap(sitio){
 $.ajax(
 {
@@ -492,7 +498,7 @@ procesaba la información se oculta el \textit{div} contenedor del mapa de objet
 dentro \textit{DOM} es \textit{objemapdiv}). Luego se elemento \textit{HTML} para carga la imagen
 (cuya etiqueta es \textit{img} y se añade al \textit{div} contenedor) para ser visualizado por un 
 boton cuando estaba totalmente desplegado el mapa de objetos.
-\begin{lstlisting}[style=Java, caption={Obtención \textit{WebObjects}.}]
+\begin{lstlisting}[style=Java, caption={Función de despligue del Mapa de Objetos.}]
 
 success: function(data){
 urlobj = data;
@@ -520,7 +526,7 @@ libería \textit{JQuery}. Dicha función recibía la firma \textit{objmap_color\
 argumento correspondía a la ruta de archivo con el mapa de objeto ya creado en el color 
 correspondiente. El siguiente código muestra la funcionalidad descrita.
 \newpage
-\begin{lstlisting}[style=Java, caption={Obtención \textit{WebObjects}.}]
+\begin{lstlisting}[style=Java, caption={Función que genera el cambio de colors en el Mapa de Obejtos.}]
 function objmap_color(color) {
 var aux = color;      
 var imgdata = '<a id="objmaplink" href="'+urlobj.concat(aux)+'" rel="prettyPhoto"><img src="'+urlobj.concat(aux)+'" alt="objmap"></a>';
@@ -534,7 +540,7 @@ $("#objmapdiv").slideDown(800);
 contenedor, los 4 botones que modificaban la versión de color del mapa de objetos y una 
 etiqueta que agregaba un pequeño parrafo donde se mostraba el tiempo tardaba en cargar el mapa.
 Esto se aprecia en el siguiente código \textit{HTML}.
-\begin{lstlisting}[style=Java, caption={Obtención \textit{WebObjects}.}]
+\begin{lstlisting}[style=Java, caption={Contenido \textit{HTML} donde se aloja el Mapa de Objetos.}]
 <div class="span4">
   <div id="objmapdiv" class="mask2">
   <div class="loadercontainer"><div class="loader"></div></div>
@@ -589,21 +595,21 @@ trabajo pedido al prácticante.}
 \newpage
 \begin{anexo}
 	\section{Anexos}
-		\insertimageboxed{practica/organigrama}{scale=0.6}{Organigrama Web Intelligence Centre.}
-		\insertimageboxed{practica/mapadeobjetos}{scale=0.4}{Mapa de Objetos Claves versión 1.}
-		\insertimageboxed{practica/mapadefijacion}{scale=0.35}{Mapa de Fijación.}
-		\insertimageboxed{practica/matricial}{scale=0.35}{Representación matricial del Mapa de Fijación.}
-		\insertimageboxed{practica/escaladecolores}{scale=0.48}{Escala de colores del Mapa de Objetos Claves.}
-		\insertimageboxed{practica/mapadecolores}{scale=0.35}{Mapa de Objetos Claves versión 2.}
-		\insertimageboxed{practica/akori}{scale=0.48}{Interfaz de la Plataforma del \textit{Proyecto AKORI}.}
-		\insertimageboxed{practica/reporte}{scale=0.48}{Análisis del sitio web de \textit{GOOGLE}.}
-		\insertimageboxed{practica/cargando}{scale=0.48}{Procesamiento de información.}
-		\insertimageboxed{practica/mapas}{scale=0.48}{Mapas desplegados.}
-		\insertimageboxed{practica/objmap}{scale=0.48}{Acercamiento del Mapa de Objetos Claves.}
-		\insertimageboxed{practica/rojo}{scale=0.48}{Mapa de Objetos Claves en escala de rojo.}
-		\insertimageboxed{practica/azul}{scale=0.48}{Mapa de Objetos Claves en escala de azul.}
-		\insertimageboxed{practica/verde}{scale=0.48}{Mapa de Objetos Claves en escala de verde.}
-		\insertimageboxed{practica/naranjo}{scale=0.48}{Mapa de Objetos Claves en escala de naranjo.}
+		\insertimageboxed{practica/organigrama}{scale=0.6}{Organigrama Web Intelligence Centre. \label{organigrama}}
+		\insertimageboxed{practica/mapadeobjetos}{scale=0.4}{Mapa de Objetos Claves versión 1.\label{mapadeobjetosv1}}
+		\insertimageboxed{practica/mapadefijacion}{scale=0.35}{Mapa de Fijación.\label{mapadefijacion}}
+		\insertimageboxed{practica/matricial}{scale=0.35}{Representación matricial del Mapa de Fijación.\label{matricial}}
+		\insertimageboxed{practica/escaladecolores}{scale=0.48}{Escala de colores del Mapa de Objetos Claves.\label{escaladecolores}}
+		\insertimageboxed{practica/mapadecolores}{scale=0.35}{Mapa de Objetos Claves versión 2.\label{mapadecolores}}
+		\insertimageboxed{practica/akori}{scale=0.48}{Interfaz de la Plataforma del \textit{Proyecto AKORI}\label{akori}.}
+		\insertimageboxed{practica/reporte}{scale=0.48}{Análisis del sitio web de \textit{GOOGLE}.\label{reporte}}
+		\insertimageboxed{practica/cargando}{scale=0.48}{Procesamiento de información.\label{cargando}}
+		\insertimageboxed{practica/mapas}{scale=0.48}{Mapas desplegados.\label{mapas}}
+		\insertimageboxed{practica/objmap}{scale=0.48}{Acercamiento del Mapa de Objetos Claves.\label{objmap}}
+		\insertimageboxed{practica/rojo}{scale=0.48}{Mapa de Objetos Claves en escala de rojo.\label{rojo}}
+		\insertimageboxed{practica/azul}{scale=0.48}{Mapa de Objetos Claves en escala de azul. \label{azul}}
+		\insertimageboxed{practica/verde}{scale=0.48}{Mapa de Objetos Claves en escala de verde.\label{verde}}
+		\insertimageboxed{practica/naranjo}{scale=0.48}{Mapa de Objetos Claves en escala de naranjo.\label{naranjo}}
 	
 \end{anexo}
 
@@ -615,10 +621,42 @@ trabajo pedido al prácticante.}
 	\url{http://www.wic.uchile.cl}
 	
 	\bibitem{ref2}
+	\textit{Página Oficial del Proyecto AKORI} 
+	\url{https://www.akoriproject.cl}
+	
+	\bibitem{ref3}
+	\textit{Sitio oficial de lenguaje de programación \textit{Python}}
+	\url{https://www.python.org/}
+	
+	\bibitem{ref4}
 	\textit{PyCharm IDLE}
 	\url{https://www.jetbrains.com/pycharm/}
 	
-	\bibitem{ref3}
-	\textit{Página Oficial del Proyecto AKORI} 
-	\url{https://www.akori-project.cl}
+	\bibitem{ref5}
+	\textit{El framework \textit{Django}}
+	\url{https://www.djangoproject.com/}
+	
+	\bibitem{ref6}
+	\textit{Biblioteca SELENIUM}
+	\url{http://www.seleniumhq.org/}
+	
+	\bibitem{ref7}
+	\textit{Patrón Modelo Vista Controlador}
+	\url{https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller}
+	
+	\bibitem{ref8}
+	\textit{Definición del término Web scraping}
+	\url{https://es.wikipedia.org/wiki/Web_scraping}
+	
+	\bibitem{ref9}
+	\textit{Publicación del WIC donde son definidos los objetos web}
+	\url{http://wic.uchile.cl/wp-content/uploads/2015/08/Eye-tracking-and-EEG-features-for-salient-Web-object-identification.pdf}
+	
+	\bibitem{ref10}
+	\textit{Definición elementos del DOM}
+	\url{https://es.wikipedia.org/wiki/Document_Object_Model}
+	
+	
+	
+
 \end{references}

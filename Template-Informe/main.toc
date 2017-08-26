@@ -6,9 +6,9 @@
 \contentsline {subsubsection}{\numberline {1.3.1}Software}{1}{subsubsection.1.3.1}
 \contentsline {subsubsection}{\numberline {1.3.2}\textit {Proyecto AKORI}}{2}{subsubsection.1.3.2}
 \contentsline {subsubsection}{\numberline {1.3.3}Equipo}{3}{subsubsection.1.3.3}
-\contentsline {subsection}{\numberline {1.4}Situaci\IeC {\'o}n Previa}{3}{subsection.1.4}
+\contentsline {subsection}{\numberline {1.4}Situaci\IeC {\'o}n Previa}{4}{subsection.1.4}
 \contentsline {subsubsection}{\numberline {1.4.1}Versi\IeC {\'o}n \textit {Java} con \textit {Servlet}}{4}{subsubsection.1.4.1}
-\contentsline {subsubsection}{\numberline {1.4.2}Versi\IeC {\'o}n \textit {Django}}{4}{subsubsection.1.4.2}
+\contentsline {subsubsection}{\numberline {1.4.2}Versi\IeC {\'o}n \textit {Django}}{5}{subsubsection.1.4.2}
 \contentsline {subsection}{\numberline {1.5}Descripci\IeC {\'o}n general del trabajo realizado}{5}{subsection.1.5}
 \contentsline {section}{\numberline {2}Trabajo Realizado}{6}{section.2}
 \contentsline {subsection}{\numberline {2.1}Etapa 0}{6}{subsection.2.1}
