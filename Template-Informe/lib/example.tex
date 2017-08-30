@@ -19,7 +19,7 @@
 	% Las sub-secciones se inician con \subsection, si se quiere una sub-sección sin "número" se pueden usar las funciones \subsectionanum (nuevo subtítulo sin numeración) o la función \subsectionanumnoi para crear el mismo subtítulo sin numerar y sin aparecer en el índice
 	\subsection{Lugar de Trabajo}
 		
-		\newpar{La prática profesional se realizó en el Web Intelligence Centre \cite{ref1}, en adelante WIC, es un centro de investigación dependiente de la Facultad de Ciencias Físicas y Matemáticas de la Universidad de Chile, dirigido por el académico Juan Velásquez del Departamento de Ingeniería Industrial de la Universidad de Chile. Su misión es desarrollar investigación en el campo de Tecnologías de Información creando soluciones para abordar problemas complejos de ingeniería utilizando herramientas basadas en la Web de las Cosas. Se encuentra ubicado en Beaucheff \#851, Santiago, Chile. El trabajo se realizó de forma presencial en las instalaciones del centro, entre el 3 al 31 de Enero de 2017. En figura \ref{organigrama} es posible apreciar el organigrama del centro.}
+		\newpar{La prática profesional se realizó en el Web Intelligence Centre \cite{ref1}, en adelante WIC, es un centro de investigación dependiente de la Facultad de Ciencias Físicas y Matemáticas de la Universidad de Chile, dirigido por el académico Juan Velásquez del Departamento de Ingeniería Industrial de la Universidad de Chile. Su misión es desarrollar investigación en el campo de Tecnologías de Información creando soluciones para abordar problemas complejos de ingeniería utilizando herramientas basadas en la Web de las Cosas. Se encuentra ubicado en Beaucheff \#993, Santiago, Chile. El trabajo se realizó de forma presencial en las instalaciones del centro, entre el 3 al 31 de Enero de 2017. En figura \ref{organigrama} es posible apreciar el organigrama del centro.}
 		
 
 	\subsection{Grupo de trabajo}
@@ -188,7 +188,7 @@
 		de objetos en la segunda versión de la aplicación, como primera instancia se agregó
 		una versión preliminar del mapa de objetos tal como existía en la primera versión 
 		(ver figura \ref{mapadeobjetosv1}) que descataba todos los elementos del \textit{DOM} de un documento 
-		\textit{HTML}, luego se ideó un mapa de objetos que diferencia los elementos más 
+		\textit{HTML}, luego se ideó un mapa de objetos que diferenciaba los elementos más 
 		a menos vistos siguiendo un algoritmo de suma de matrices, donde la matriz era 
 		gráficada (ver figura \ref{escaladecolores}) para generar una imagen que era fusionada a otra imagen tomanda del 
 		sitio web analizado bajando la opacidad en cada una. En la figura \ref{mapadecolores} 
@@ -213,7 +213,7 @@
 				matriz que representaba el sitio (es decir, se tomó una fotografía del sitio web
 				y se hizo una conversión a su representación matricial) en una escala de opacidad
 				tal como se aprecia en la figura \ref{mapadecolores}.
-				\item \textbf{Etapa de FrontEnd}: Una vez listos las funciones y algoritmos de 
+				\item \textbf{Etapa de FrontEnd}: Una vez listas las funciones y algoritmos de 
 				las etapas anteriores, se pasó a la última etapa en la que utilizando 
 				\textit{Javascript} y funciones \textit{AJAX} se implementó el mapa de objetos 
 				final dentro de la aplicación web, tal como se muestra en la figura \ref{objmap} y 
@@ -260,11 +260,11 @@
          para
          \textit{JAVA} encargado de ejecutar llamadas directas al navegador y conseguir información
          (\textit{Web Scrapping} \cite{ref8}) del sitio en cual se estaba navegando, luego usando el 
-         método \textit{findElements} se llevaba cabo la consulta qu era conseguir todos los 
+         método \textit{findElements} se llevaba cabo la consulta que era conseguir todos los 
          \textit{WebObject} que poseían un \textit{TagName}, cuyo nombre de etiqueta 
-         (\textit{TagName}) era referido a las etiquetas de \textit{HTML}, donde dichos elementos
-         eran guardados en una variable query, donde los objetos son almanenados en un 
-         \textit{ArrayList Object} que corresponde al objeto que representa las listas en 
+         (\textit{TagName}) era referido a las etiquetas de \textit{HTML}, dichos elementos
+         eran guardados en una variable query que era una instancia de la clase  
+         \textit{ArrayList Object}, como su nombre lo indica es el objetos que representa las en 
          \textit{JAVA}.
 			\begin{lstlisting}[style=Java, caption={Obtención \textit{WebObjects}.}]
            	query = driver.findElements(By.tagName(temp.tagName()));
@@ -272,11 +272,11 @@
 		\item Luego, para dibujar el mapa de objetos se ingresaba a un bucle manejado por un ciclo
 		\textit{for} en el cual se recorría la lista de \textit{Web Objects}, y utilizando los 
 		objetos \textit{Point} y \textit{Dimesion} ambos provenientes de la biblioteca de 
-		\textit{Selenium}, el cual dichos objetos guardaban las posición de objeto web 
+		\textit{Selenium}, el cual dichos objetos guardaban las posiciones de objeto web 
 		en la representación matricial del \textit{screenshot} del sitio de estudio. Dichas
 		posiciones servían para instanciar un objeto \textit{Rectangle} de la clase estándar
 		de \textit{JAVA}, y finalmante con un objeto \textit{Draw} eran dibujados dentro del 
-		\textit{screenshot} tomado. En el siguiente código puese apreciarse una versión simplificada
+		\textit{screenshot} tomado. En el siguiente código puede apreciarse una versión simplificada
 		de dicho algoritmo.
 					\begin{lstlisting}[style=Java, caption={Algoritmo mapa de objetos simplificado.}]
 for (WebElement temp1 : query) {
@@ -286,9 +286,9 @@ for (WebElement temp1 : query) {
 }
 \end{lstlisting}
 		\item Algunos puntos que fueron omitidos del algoritmo anterior es que podían existir 
-		errores en su ejecución que provenían el sitio web que se estaba analizando que era 
-		neutralizando con sentencias \textit{try-catch} aislando los errores más frecuentes.
-		\item El último punto importante a mencionar existian algunos objetos web cuyo tamaño 
+		errores en su ejecución que provenían el sitio web que se estaba analizando. Dichos errores fueron 
+		neutralizados con sentencias \textit{try-catch}, aislando así los errores más frecuentes.
+		\item El último punto importante a mencionar existían algunos objetos web cuyo tamaño 
 		escapaba las dimensiones de la pantalla donde se visualizaba el sitio web, dichos objetos
 		no fueron considerados dentro del mapa de objetos debido a que no eran importantes 
 		para el análisis de determinar los objetos web más visto por el usuario. Estos 
@@ -307,7 +307,7 @@ if (d.width <= 0 || d.height <= 0 || po.x < 0 || po.y < 0) {
 	\textit{Django}, se procedió a migrar el algoritmo del mapa de objetos ya existente
 	al lenguaje \textit{Python} testeando el resultado con \textit{PhantomJS} y la biblioteca
 	de \textit{Selenium} para \textit{Python}. La depuración del algoritmo puede ser dividada
-	en las siguientes fases para implementar el mapa:}
+	en las siguientes fases que implementan el mapa:}
 	\newpage
 		\begin{enumerate}
 			\item \textbf{Importación}: Para migración del código se utilizaron las siguientes
@@ -320,9 +320,9 @@ from PIL import Image, ImageDraw
 			\item \textbf{Obtención  del \textit{Screenshot} del sitio web}: Una vez elegida la
 			url del sitio web a analizar, se obtenía un \textit{screenshot} del sitio web con 
 			la ayuda de \textit{PhantomJS} seteando el tamaño de la ventana y la url para luego
-			guardala dentro del servidor. Luego utilizando la biblioteca de edición de imágenes
-			se instanciaban los objetos \textit{Imagen} que abría que la imagen a editar y 
-			\textit{ImageDraw} que editaba la imagen abierta, en este caso el \textit{screenshot}.
+			ser guardadas dentro del servidor. Luego utilizando la biblioteca de edición de imágenes
+			se instanciaban los objetos, \textit{Imagen}, que abría que la imagen a editar y 
+			\textit{ImageDraw}, que editaba la imagen abierta, en este caso el \textit{screenshot}.
 			\begin{lstlisting}[style=Python, caption={Destacación de objetos web}]
 driver = webdriver.PhantomJS()
 driver.set_window_size(1301, 744)
@@ -341,7 +341,7 @@ body = element.find_elements(By.XPATH, './/*')
 \end{lstlisting}
 		\item \textbf{Destacación de objetos web}: Finalmente, a través de un ciclo se recorría
 		la lista de elementos dibujando un rectangulo en el \textit{screenshot} que descataba la 
-		posición de dicho objetos en cada iteración. La posición exacta la entraba la librería 
+		posición de dicho objetos en cada iteración. La posición exacta era determinada la librería 
 		\textit{Selenium}.
 \begin{lstlisting}[style=Python, caption={Algoritmo mapa de objetos de simplificado
 versión \textit{Python}.}]
@@ -359,7 +359,7 @@ for b in body:
 \newpage
 \subsection{Etapa 2: Refactoring}
 	\subsubsection{Diseño}
-	\newpar{Antes de detallar el funcionamiento del código realizado se explica el patrón de 
+	\newpar{Antes de detallar el funcionamiento del código realizado se explicará el patrón de 
 	diseño utilizado. Como se dijo en secciones pasado el framework \textit{Django} sigue el patrón
 	\textit{Modelo Vista Controlador} (MVC) \cite{ref7}. \\ \\ 
 	El MVC consta de las siguientes partes: \\
@@ -392,7 +392,7 @@ for b in body:
 	objetos web más vistos dentro del sitio de estudio, provenían de la imagen (del sitio
 	web) que generaba el mapa de fijación (ver figura \ref{mapadefijacion}). Para trabajar con estos datos, se 
 	procedía a transformar la imagen a su representación matricial, en cual donde antes habían 
-	existido colores más intensos ahora estaba la concentración de números más altos. Sin embargo, 
+	existido colores más intensos ahora estaba la concentración de los números más grandes. Sin embargo, 
 	estos valores eran entre 0 a 1, para tener un mayor acercamiento a la escala de colores RGB
 	se ponderaba la matriz para obtener valores de 0 a 255, con la función definida en el siguiente
 	código:}
@@ -433,11 +433,15 @@ def buildMatrix(matrix, x1, y1, x2, y2, alpha):
 		i += 1
 	return matrix
 \end{lstlisting}
-\newpar{Como la matriz de opacidad construida elaboraba un mapa de colores en función de las 
-posiciones de objetos web (ver figura \ref{escaladecolores}), para ello se gráficaba la matriz gracias a la función 
-de la biblioteca \textit{matplotlib}, para finalmente efectuar la fusión de la imagen en escala 
-de colores y el \textit{screenshot} del sitio web con cierta opacidad, creando una imagen 
-como la de la figura \ref{mapadecolores}, dicho procedimiento se llevaba a cabo con la función \textit{objmapColor}.}
+
+\newpar{La matriz retornaba por la función \textit{buildMatrix} elaboraba un mapa de 
+colores en función de las posiciones de los objetos web, para obtener la imagen
+proyectada por dicha matriz, se graficaba la matriz gracias a la función \textit{plot} 
+de la biblioteca \textit{matplotlib} \cite{ref13} y guardaba el archivo con el método
+\textit{save} de la misma biblioteca. Finalmente se efectuaba una fusión del mapa de 
+colores obtenido y un \textit{screenshot} del sitio web, marcando cierta opacidad 
+para que el mapa de colores resaltará los objetos web previsto en el \textit{sceenshot}. El resultado de esto se encuentra en la figura \ref{mapadecolores} y es realizado por el código de la función \textit{objmapColor}, donde el método \textit{blend} se encarga de la fusión de la imágenes pasadas como argumento, su tercer argumento indica la escala de opacidad, en este caso
+es 0.5.}
 \begin{lstlisting}[style=Python, caption={Fusión de imágenes}]
 def objmapColor(screenshot, path, matrix, color_string):
     '''Funcion que retorna la image final para el mapa de objeto realizando un blend entre el screenshot y el mapa de colores.
@@ -477,11 +481,11 @@ código:}
 \textit{objmap} encargada de ejecutar la llamadas \textit{AJAX} siguiendo la sintaxis de 
 \textit{JQuery}, dicha función realizaba una solicitud GET del protocolo HTTP para conseguir
 la información del mapa de fijación, con un \textit{timeout} 120000 milisegundos antes de efectuar
-la petición una vez obtenidos los datos se ejecutaba la función de la variable \textit{success} 
+la petición, una vez obtenidos los datos se ejecutaba la función de la variable \textit{success} 
 propia de \textit{JQuery}. La sintaxis \textit{\$.ajax\{...\}} se utiliza para ejecutar llamadas
 \textit{AJAX}, por lo tanto la funcionalidad del objeto \textit{XMLHttpRequest} (objeto usado para 
-interacción entre servidor y cliente mediante las solicitudes y respuestas genereadas entre ellos) 
-quedaba encapsulada por la biblioteca \textit{JQuery}. En el siguiente código se muestra lo descrito.
+interacción entre servidor y cliente mediante las solicitudes y respuestas genereadas entre ellos) \cite{ref14}
+quedaba encapsulada por la biblioteca \textit{JQuery} \cite{ref15}. En el siguiente código se muestra lo descrito.
 \newpage
 \begin{lstlisting}[style=Java, caption={Llamada \textit{AJAX} para despliegue del Mapa de Objetos.}]
 function objmap(sitio){
@@ -496,9 +500,9 @@ success: function(data){...}
 \end{lstlisting}
 \item \textbf{Visualización}: Una vez obtenidos los datos, se ejecutaba la función dentro de la variable \textit{success}, donde la variable \textit{urlobj} guardaba los datos y mientras se 
 procesaba la información se oculta el \textit{div} contenedor del mapa de objetos (cuyo nombre
-dentro \textit{DOM} es \textit{objemapdiv}). Luego se elemento \textit{HTML} para carga la imagen
-(cuya etiqueta es \textit{img} y se añade al \textit{div} contenedor) para ser visualizado por un 
-boton cuando estaba totalmente desplegado el mapa de objetos.
+dentro \textit{DOM} es \textit{objemapdiv}). Luego el elemento \textit{HTML} para carga la imagen
+(cuya etiqueta es \textit{img} y se añade al \textit{div} contenedor) para a ser visualizado por un 
+botón cuando el mapa ya es operativo.
 \begin{lstlisting}[style=Java, caption={Función de despligue del Mapa de Objetos.}]
 
 success: function(data){
@@ -520,11 +524,11 @@ error: function(x, t, m) {
 \end{lstlisting}
 \item \textbf{Funcionalidad Cambio de Colores}: En secciones previas se dijo que para la versión 
 final de mapa colores existen cuatro tonalidades de colores rojo, azul naranjo y verde. Para lograr
-cambiar el tipo de mapa dinámicamente se programó una función \textit{JavaScript} que se llamaba al presionar boton del color correspodiente. Esta función recibía como argumento la ruta de la imagen
-a modificar, y creaba un etiqueta \textit{HTML} de inserción de imagen, para luego se redireccionada
+cambiar el tipo de mapa dinámicamente se programó una función \textit{JavaScript} que se llamaba al presionar botón del color correspodiente, dicha función se ejecuta desde el lado del cliente. Esta función recibía como argumento la ruta de la imagen
+a modificar, y creaba un etiqueta \textit{HTML} de inserción de imagen, que luego era redireccionada
 al \textit{div} contenedor del mapa de objetos con al ayuda del método \textit{.sliveDown\(\)} de la
-libería \textit{JQuery}. Dicha función recibía la firma \textit{objmap_color\(color\)}, donde su 
-argumento correspondía a la ruta de archivo con el mapa de objeto ya creado en el color 
+libería \textit{JQuery}. Dicha función recibía la firma \textit{objmapColor\(color\)}, donde su 
+argumento correspondía a la ruta del archivo con el mapa de objeto ya creado en el color 
 correspondiente. El siguiente código muestra la funcionalidad descrita.
 \newpage
 \begin{lstlisting}[style=Java, caption={Función que genera el cambio de colores en el Mapa de Objetos.}]
@@ -536,10 +540,10 @@ $("#objmaplink").prettyPhoto();
 $("#objmapdiv").slideDown(800);
 }
 \end{lstlisting}
-\item \textbf{Código HTML}: El último paso consitió en agregar al templates la etiquetas 
+\item \textbf{Código HTML}: El último paso consitió en agregar al templates las etiquetas 
 \textit{HTML} necesarias para desplegar el mapa de objetos, las cuales fueron el \textit{div}
 contenedor, los 4 botones que modificaban la versión de color del mapa de objetos y una 
-etiqueta que agregaba un pequeño parrafo donde se mostraba el tiempo tardaba en cargar el mapa.
+etiqueta que agregaba un pequeño párrafo donde se mostraba el tiempo tardaba en cargar el mapa.
 Esto se aprecia en el siguiente código \textit{HTML} y se visualiza en la figura \ref{mapas}.
 \begin{lstlisting}[style=Java, caption={Contenido \textit{HTML} donde se aloja el Mapa de Objetos.}]
 <div class="span4">
@@ -562,7 +566,7 @@ Esto se aprecia en el siguiente código \textit{HTML} y se visualiza en la figur
 
 \newpar{En las figuras \ref{rojo}, \ref{azul}, \ref{verde} y \ref{naranjo} pueden 
 observarse las distinas tonalidades del mapa de objetos cambiados por su respectivo botón.}
-\newpar{Sí la última parte es bastante simple está fue la forma indicada por el tutor de práctica,
+\newpar{Sí bien la última parte es bastante simple está fue la forma indicada por el tutor de práctica,
 ya que se estaba trabajando en una nueva interfaz a toda a la aplicación que no formaba parte del
 trabajo pedido al prácticante.}
 
@@ -570,7 +574,7 @@ trabajo pedido al prácticante.}
 \newpage
 \section{Conclusiones}
  	\newpar{Los resultados del trabajo presentado en este informe fueron considerados por el tutor
- 	de práctica como satifactorios, siendo estos puestos en producción al poco tiempo de finalizada la 			práctica, los cuales pueden ser apreciados en la página oficial del \textit{Proyecto AKORI} 			\cite{ref3}. Además gracias a la programación hecha por el prácticante cuando se ingresa la url del sitio web a analizar no solo es posible generar un mapa de los objetos más relevantes encerrados por rectangulos, sino que existe un mapa en escala de intensidad de colores de los objetos web más a los menos vistos por un usuario (en el sitio web que se está analizando), cambiando la escala en cuatro colores rojo, naranjo, azul y verde. \\ \\ Respecto al futuro de la aplicación
+ 	de práctica como satifactorios, siendo estos puestos en producción al poco tiempo de finalizada la 			práctica, los cuales pueden ser apreciados en la página oficial del \textit{Proyecto AKORI} 			\cite{ref3}. Además gracias a la programación hecha por el prácticante cuando se ingresa la url del sitio web a analizar no solo es posible generar un mapa de los objetos más relevantes encerrados por rectángulos, sino que existe un mapa en escala de intensidad de colores de los objetos web más a los menos vistos por un usuario (en el sitio web que se está analizando), cambiando la escala en cuatro colores rojo, naranjo, azul y verde. \\ \\ Respecto al futuro de la aplicación
  	hay que destacar que aún se encuentra trabajando en ella realizando actulizaciones para mejorar su llegada al público o a los posible clientes (si llega a comercializarse) en términos de 
  	visualizaciones que le provean más y mejor información al usuario sobre el sitio web a analizar, 
  	en particular se seguirá trabajando en las secciones modificadas y agregadas por el practicante,
@@ -671,6 +675,14 @@ trabajo pedido al prácticante.}
 	\bibitem{ref13}
 	\textit{Biblioteca de generación de gráficos}
 	\url{https://matplotlib.org/}
+	
+	\bibitem{ref14}
+	\textit{Objeto XMLHttpRequest}
+	\url{https://es.wikipedia.org/wiki/XMLHttpRequest}
+	
+	\bibitem{ref15}
+	\textit{Biblioteca JQuery}
+	\url{https://jquery.com/}
 	
 	
 	
