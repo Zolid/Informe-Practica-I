@@ -30,7 +30,7 @@
 \subsection{Equipos y Software}	
 	
 		\subsubsection{Software}
-			\newpar{El software utilizado para desarrollar el trabajo fue \textit{Python} \cite{ref3} como lenguaje de programación (a través del IDLE Pycharm proporcionado por JetBrains \cite{ref4}), el framework para aplicaciones Web Python, \textit{Django} \cite{ref5}, \textit{JavaScript} y \textit{AJAX} para la creación de páginas web dinámicas, \textit{Git} para el manejo de control de versiones, el navegador sin interfaz gráfico (conocido como headless browser), PhantomJS, el entorno de pruebas software para aplicaciones web, Selenium \cite{ref6}, dos bibliotecas de Python, una para edición de imágenes, Python Imaging Library, y otra para la generación de un mapa de colores, Matplotlib, y el sistema operativo Ubuntu. Además cabe descatar del aplicación del \textit{Proyecto AKORI} \cite{ref2} en la cual se trabajo. A continuación se presenta una breve descripción de los elementos más relevantes para el desarrollo y compresión del trabajo realizado:}
+			\newpar{El software utilizado para desarrollar el trabajo fue \textit{Python} \cite{ref3} como lenguaje de programación (a través del IDLE Pycharm proporcionado por JetBrains \cite{ref4}), el framework para aplicaciones Web Python, \textit{Django} \cite{ref5}, \textit{JavaScript} y \textit{AJAX} para la creación de páginas web dinámicas, \textit{Git} para el manejo de control de versiones, el navegador sin interfaz gráfico (conocido como headless browser), PhantomJS, el entorno de pruebas software para aplicaciones web, Selenium \cite{ref6}, dos bibliotecas de Python, una para edición de imágenes, Python Imaging Library, y otra para la generación de un mapa de colores, Matplotlib, y el sistema operativo Ubuntu 16.04 LTS. Además cabe descatar del aplicación del \textit{Proyecto AKORI} \cite{ref2} en la cual se trabajo. A continuación se presenta una breve descripción de los elementos más relevantes para el desarrollo y compresión del trabajo realizado:}
 			\begin{enumerate}
 				\item \textbf{Python}: Es un lenguaje de programación interpretado cuya filosofía 
 				hace hincapié en una sintaxis que favorezca un código legible. Se trata de un 
@@ -224,17 +224,17 @@
 \section{Trabajo Realizado}
 
 	\newpar{Como se ha mencionado previamente el trabajo consitió en la creación de un mapa 
-	de los objetos web (cita) más relevantes que un usuario visualiza mientras navega en un sitio web.
+	de los objetos web \cite{ref9} más relevantes que un usuario visualiza mientras navega en un sitio web.
 	Los datos
 	que se usaron para indicar donde se encontraban los objetos claves eran recibidos desde el 
 	mapa de fijación ocular (que se explicó en las secciones pasadas) que fueron obtenidos por 
 	algoritmos de minería de datos, eye tracking, y electroencefalografía. Estos datos son el 
-	punto de partida del mapa de objetos implementado. Los datos eran representados en una imagen basada en un \textit{screenshot} (cite ?) del sitio que se estaba 
+	punto de partida del mapa de objetos implementado. Los datos eran representados en una imagen basada en un \textit{screenshot} \cite{ref11} del sitio que se estaba 
 	analizando, la imagen tenía una coloración más intensa en los 
-	lugares más probables (ver figura ?) que un usuarios fijaría su atención en los primeros milisegundos. Luego se realizaba conversión de la imagen de visualización a sus representación matricial con números enteros entre 0 a 255 (que es la escala de colores rgb cite ?) los lugares dentro de la matriz que tenían numeros más altos correspondían a las zonas más probables de observación. 
-	Finalmente, se gráficaba dicha matriz generando una imagen como la de la figura ?, dicha
+	lugares más probables (ver figura \ref{mapadefijacion}) que un usuarios fijaría su atención en los primeros milisegundos. Luego se realizaba conversión de la imagen de visualización a sus representación matricial (ver figura \ref{matricial}) con números enteros entre 0 a 255 (que es la escala de colores RGB \cite{ref12}) los lugares dentro de la matriz que tenían numeros más altos correspondían a las zonas más probables de observación. 
+	Finalmente, se gráficaba dicha matriz generando una imagen como la de la figura \ref{escaladecolores}, dicha
 	imagen se fusionaba con un \textit{screenshot} del sitio web produciendo la imagen 
-	que se puede apreciar en la figura, los colores más oscuros representaban los objetos más
+	que se puede apreciar en la figura \ref{mapadecolores}, los colores más oscuros representaban los objetos más
 	vistos, el último paso fue agregar estos cambios a la aplicación oficial. \\ \\
 	A continuación se explicará en profundidad el detalle del proceso descrito y las etapas 
 	mencionadas en la sección anterior.}
@@ -245,7 +245,7 @@
         involucradas en el mapa de objetos de la versión \textit{JAVA}. Esta exploración se realizó
         al mismo tiempo que el practicante aprendió sobre los elementos específicos para el desarrollo
         de aplicaciones web \textit{Django}, como lo son los modelos, vistas, templates en especial
-        elementos de \textit{CSS} cite ? y \textit{BootStrap} cite ?.} 
+        elementos de \textit{HTML} y \textit{CSS}.} 
         
         \subsubsection{Algoritmo Mapa de Objetos versión \textit{Java}}
         
@@ -256,10 +256,10 @@
         
         \begin{enumerate}
          \item Para obtener todos los elementos del \textit{DOM} se empleaba una consulta al 
-         \textit{WebDriver Object} cite ? un objeto perteneciente a la biblioteca \textit{Selenium} 	
+         \textit{WebDriver Object} un objeto perteneciente a la biblioteca \textit{Selenium} 	
          para
          \textit{JAVA} encargado de ejecutar llamadas directas al navegador y conseguir información
-         (\textit{Web Scrapping} cite ?) del sitio en cual se estaba navegando, luego usando el 
+         (\textit{Web Scrapping} \cite{ref8}) del sitio en cual se estaba navegando, luego usando el 
          método \textit{findElements} se llevaba cabo la consulta qu era conseguir todos los 
          \textit{WebObject} que poseían un \textit{TagName}, cuyo nombre de etiqueta 
          (\textit{TagName}) era referido a las etiquetas de \textit{HTML}, donde dichos elementos
@@ -294,7 +294,7 @@ for (WebElement temp1 : query) {
 		para el análisis de determinar los objetos web más visto por el usuario. Estos 
 		se aislaban de acuerdo a sí las posiciones del web object escapaban a una coordenada
 		negativa. Una sentencía \textit{if} se encargaba de lo indicado. 
-		\begin{lstlisting}[style=Java, caption={Obtención \textit{WebObjects}.}]
+		\begin{lstlisting}[style=Java, caption={Condición de borde.}]
 if (d.width <= 0 || d.height <= 0 || po.x < 0 || po.y < 0) {
 	continue;
 }
@@ -343,7 +343,8 @@ body = element.find_elements(By.XPATH, './/*')
 		la lista de elementos dibujando un rectangulo en el \textit{screenshot} que descataba la 
 		posición de dicho objetos en cada iteración. La posición exacta la entraba la librería 
 		\textit{Selenium}.
-\begin{lstlisting}[style=Python, caption={Consulta al body del sitio web.}]
+\begin{lstlisting}[style=Python, caption={Algoritmo mapa de objetos de simplificado
+versión \textit{Python}.}]
 for b in body:
 	x1 = b.location['x']
 	y1 = b.location['y']
@@ -353,14 +354,14 @@ for b in body:
 \end{lstlisting}
 		\end{enumerate}				
 		
-	\newpar{El resultado era un mapa igual al de la figura ?. Algunas partes del código han
+	\newpar{El resultado era un mapa igual al de la figura \ref{mapadeobjetosv1}. Algunas partes del código han
 	sido omitidas debido a que no formaban parte escencial de la explicación.}
 \newpage
 \subsection{Etapa 2: Refactoring}
 	\subsubsection{Diseño}
 	\newpar{Antes de detallar el funcionamiento del código realizado se explica el patrón de 
 	diseño utilizado. Como se dijo en secciones pasado el framework \textit{Django} sigue el patrón
-	\textit{Modelo Vista Controlador} (MVC) cite ?. \\ \\ 
+	\textit{Modelo Vista Controlador} (MVC) \cite{ref7}. \\ \\ 
 	El MVC consta de las siguientes partes: \\
 	\begin{enumerate}
 		\item \textbf{Modelo}: Su responsabilidad es el manejar la representación de la información 
@@ -389,7 +390,7 @@ for b in body:
 	un mapa más completo donde se diferenciarán los objetos más vistos a lo menos vistos. Como ya
 	se había mencionado en secciones previas; los datos que mostraban las posiciones de los 
 	objetos web más vistos dentro del sitio de estudio, provenían de la imagen (del sitio
-	web) que generaba el mapa de fijación (ver figura ?). Para trabajar con estos datos, se 
+	web) que generaba el mapa de fijación (ver figura \ref{mapadefijacion}). Para trabajar con estos datos, se 
 	procedía a transformar la imagen a su representación matricial, en cual donde antes habían 
 	existido colores más intensos ahora estaba la concentración de números más altos. Sin embargo, 
 	estos valores eran entre 0 a 1, para tener un mayor acercamiento a la escala de colores RGB
@@ -402,7 +403,7 @@ def multiplier_matrix(matrix):
 \end{lstlisting}
 	
 	\newpar{Para obtener la representación matricial del mapa de fijación ocular se empleó de la 
-	biblioteca de \textit{Python}, \textit{matplotlib} cite ?, (usada para la generación de 
+	biblioteca de \textit{Python}, \textit{matplotlib} \cite{ref13}, (usada para la generación de 
 	gráficos) con el método \textit{imread} que retornaba la matriz de la imagen que recibe como
 	entrada.}
 \begin{lstlisting}[style=Python, caption={Forma matricial de una imagen.}]
@@ -433,10 +434,10 @@ def buildMatrix(matrix, x1, y1, x2, y2, alpha):
 	return matrix
 \end{lstlisting}
 \newpar{Como la matriz de opacidad construida elaboraba un mapa de colores en función de las 
-posiciones de objetos web (ver figura ?), para ello se gráficaba la matriz gracias a la función 
+posiciones de objetos web (ver figura \ref{escaladecolores}), para ello se gráficaba la matriz gracias a la función 
 de la biblioteca \textit{matplotlib}, para finalmente efectuar la fusión de la imagen en escala 
 de colores y el \textit{screenshot} del sitio web con cierta opacidad, creando una imagen 
-como la de la figura ?, dicho procedimiento se llevaba a cabo con la función \textit{objmapColor}.}
+como la de la figura \ref{mapadecolores}, dicho procedimiento se llevaba a cabo con la función \textit{objmapColor}.}
 \begin{lstlisting}[style=Python, caption={Fusión de imágenes}]
 def objmapColor(screenshot, path, matrix, color_string):
     '''Funcion que retorna la image final para el mapa de objeto realizando un blend entre el screenshot y el mapa de colores.
@@ -526,7 +527,7 @@ libería \textit{JQuery}. Dicha función recibía la firma \textit{objmap_color\
 argumento correspondía a la ruta de archivo con el mapa de objeto ya creado en el color 
 correspondiente. El siguiente código muestra la funcionalidad descrita.
 \newpage
-\begin{lstlisting}[style=Java, caption={Función que genera el cambio de colors en el Mapa de Obejtos.}]
+\begin{lstlisting}[style=Java, caption={Función que genera el cambio de colores en el Mapa de Objetos.}]
 function objmap_color(color) {
 var aux = color;      
 var imgdata = '<a id="objmaplink" href="'+urlobj.concat(aux)+'" rel="prettyPhoto"><img src="'+urlobj.concat(aux)+'" alt="objmap"></a>';
@@ -539,7 +540,7 @@ $("#objmapdiv").slideDown(800);
 \textit{HTML} necesarias para desplegar el mapa de objetos, las cuales fueron el \textit{div}
 contenedor, los 4 botones que modificaban la versión de color del mapa de objetos y una 
 etiqueta que agregaba un pequeño parrafo donde se mostraba el tiempo tardaba en cargar el mapa.
-Esto se aprecia en el siguiente código \textit{HTML}.
+Esto se aprecia en el siguiente código \textit{HTML} y se visualiza en la figura \ref{mapas}.
 \begin{lstlisting}[style=Java, caption={Contenido \textit{HTML} donde se aloja el Mapa de Objetos.}]
 <div class="span4">
   <div id="objmapdiv" class="mask2">
@@ -558,6 +559,9 @@ Esto se aprecia en el siguiente código \textit{HTML}.
 </div>
 \end{lstlisting}
 \end{enumerate}
+
+\newpar{En las figuras \ref{rojo}, \ref{azul}, \ref{verde} y \ref{naranjo} pueden 
+observarse las distinas tonalidades del mapa de objetos cambiados por su respectivo botón.}
 \newpar{Sí la última parte es bastante simple está fue la forma indicada por el tutor de práctica,
 ya que se estaba trabajando en una nueva interfaz a toda a la aplicación que no formaba parte del
 trabajo pedido al prácticante.}
@@ -594,7 +598,7 @@ trabajo pedido al prácticante.}
 % ANEXO
 \newpage
 \begin{anexo}
-	\section{Anexos}
+	\section{Figuras Importantes}
 		\insertimageboxed{practica/organigrama}{scale=0.6}{Organigrama Web Intelligence Centre. \label{organigrama}}
 		\insertimageboxed{practica/mapadeobjetos}{scale=0.4}{Mapa de Objetos Claves versión 1.\label{mapadeobjetosv1}}
 		\insertimageboxed{practica/mapadefijacion}{scale=0.35}{Mapa de Fijación.\label{mapadefijacion}}
@@ -655,6 +659,18 @@ trabajo pedido al prácticante.}
 	\bibitem{ref10}
 	\textit{Definición elementos del DOM}
 	\url{https://es.wikipedia.org/wiki/Document_Object_Model}
+	
+	\bibitem{ref11}
+	\textit{Definición de un Screenshot}
+	\url{https://en.wikipedia.org/wiki/Screenshot}
+	
+	\bibitem{ref12}
+	\textit{Escala RGB}
+	\url{https://es.wikipedia.org/wiki/RGB}
+	
+	\bibitem{ref13}
+	\textit{Biblioteca de generación de gráficos}
+	\url{https://matplotlib.org/}
 	
 	
 	
